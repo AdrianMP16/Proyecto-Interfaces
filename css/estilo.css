@@ -1,4 +1,4 @@
-*{
+.pagina{
     background-color: rgb(34, 60, 110);
     font-family:'Segoe UI';
 }
@@ -91,6 +91,7 @@ header{
     margin: 10px 10px 10px 10px;
     flex: 1;
     text-align: center;
+    border: 2px solid black;
 }
 footer{
     background-color: black;
