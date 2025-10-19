@@ -95,5 +95,6 @@ header{
 }
 footer{
     background-color: black;
+    display: flex;
     color: white;
 }
