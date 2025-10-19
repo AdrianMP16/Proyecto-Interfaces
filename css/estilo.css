@@ -1,0 +1,41 @@
+*{
+    background-color: rgb(10, 70, 148);
+}
+h1{
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;   
+
+}
+h2{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgb(206, 174, 125);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    background-color: rgb(206, 174, 125);
+}
+button{
+    background-color: rgb(206, 174, 125);
+}
+header{
+    background-color: white;
+    padding: 40px 20px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box
+}
