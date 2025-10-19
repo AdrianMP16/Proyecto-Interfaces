@@ -8,15 +8,101 @@
     
 </head>
 <body>
+    <!---<img src="iconos/Sin título.jpeg" width="80px">-->
+
     <nav class="menu">
-        <h1 class="logo">Fix<span style="color:  rgb(165, 81, 13);background-color: rgb(206, 174, 125);">Time</span></h1>
-        <p style="background-color: rgb(206, 174, 125); color:  rgb(10, 70, 148);" href="#suscribirse">Suscribete</p>
-        <p style="background-color: rgb(206, 174, 125); color: rgb(165, 81, 13);">Apoyanos</p>
+        <h1 class="logo">Fix<span style="color:  rgb(185, 103, 53);background-color: rgb(206, 174, 125);">Time</span></h1>
+        <a  href="#suscribirse" style="background-color: rgb(206, 174, 125); color:  rgb(34, 60, 110);">Suscribete</a>
+        <a  href="#servicios" style="background-color: rgb(206, 174, 125); color: rgb(185, 103, 53);">Contrata nuestros <br>servicios</a>
         <button href="login">Iniciar Sesion</button>
     </nav>
+
     <header>
         <h1 style="background-color: rgb(255, 255, 255);">Organiza tu tiempo</h1>
         <h2 style="background-color: rgb(255, 255, 255);">Gestiona tu propio organizador en linea gratis.</h2>
     </header>
+
+    <div>
+        <h2 style="text-align: left; font-size: 40px;">El reloj</h2>
+        <p>En base a las actividades “El Reloj” calcula el tiempo aproximado para realizarlas</p>
+        <ul>
+            <li>Activa descansos recurrentes</li>
+            <li>Boton de inicio</li>
+        </ul>
+    </div>
+
+    <div class="planificador">
+        <h2 style="text-align: left; font-size: 40px;">Planificador de Tareas</h2>
+        <img src="iconos/planificador.png" class="imagen-centrada">
+    </div>
+
+    <div id="suscribirse" class="login">
+        <img src="iconos/fondo-login.png" alt="Inicia sesion" >
+        <div class="contenido-texto" style="background-color: white;">
+            <h3 style="text-align: left; font-size: 30px;background-color: white; color: rgb(34, 60, 110);">Iniciar Sesion</h3>
+            <form >
+                <div style="background-color: white;">
+                    <label for="usuario" style="background-color: white;">Usuario: </label>
+                    <input type="text" id="usuario" placeholder="Ingresa tu usuario:" style="background-color: white;">
+
+                    <label for="password" style="background-color: white;">Ingresa tu usuario</label>
+                    <input id="password" type="password" placeholder="Ingresa tu contrasena: " style="background-color: white;">
+                    
+                    <button type="submit" >Iniciar Sesion</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+
+    <div id="servicios" style="background-color: white;">
+        <h2 style="text-align: center; font-size: 40px; background-color: white; border-radius: 10px; margin: auto; width: 400px;">Planes de servicio</h2>
+        <div class="contenido-bloque">
+            <div class="bloque">
+                <p class="cajaServicio" style="background-color: rgb(34, 60, 110);">Plan Gratuito</p>
+
+                <ul style="background-color: white;">
+                    <li style="background-color: white;">Costo: $0.00</li>
+                    <li style="background-color: white;">Usuario individual</li>
+                    <li style="background-color: white;">Sincronizacion de un dispositivos</li>
+                    <li style="background-color: white;">Recordarios basicos</li>
+                    <li style="background-color: white;">Incluye anuncios discretos</li>
+                    <li style="background-color: white;">Colaboración no disponible</li>
+                </ul>
+                <button href="MasInfo">Mas informacion</button>
+
+            </div>
+            <div class="bloque">
+                <p class="cajaServicio" style="background-color: rgb(34, 60, 110);">Plan Mensual</p>
+
+                <ul style="background-color: white;">
+                    <li style="background-color: white;">Costo: $4.99</li>
+                    <li style="background-color: white;">Sincronizacion multiplataforma</li>
+                    <li style="background-color: white;">Recordarios avanzados</li>
+                    <li style="background-color: white;">5Gb de espacio en la nube</li>
+                    <li style="background-color: white;">Colaboración disponible</li>
+                    <li style="background-color: white;">Archivos activos disponibles</li>
+                </ul>
+                <button href="MasInfo">Mas informacion</button>
+
+            </div>
+            <div class="bloque">
+                <p class="cajaServicio" style="background-color: rgb(34, 60, 110);">Plan Anual</p>
+                <ul style="background-color: white;">
+                    <li style="background-color: white;">Costo: $49.99</li>
+                    <li style="background-color: white;">Funciones del plan mensual</li>
+                    <li style="background-color: white;">Soporte de alta rioridad</li>
+                    <li style="background-color: white;">Acceso temprano a funciones especiales</li>
+                    <li style="background-color: white;">Funciones de administrador</li>
+                </ul>
+                <button href="MasInfo">Mas informacion</button>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p style="background-color: black;">Reporte de errores:<br>Correo:<br>CCA@gmail.com<br>Teléfono:<br>9999999999</p>
+        <button>Mas herramientas</button>
+    </footer>
 </body>
 </html>
