@@ -1,0 +1,225 @@
+/* ====== ESTILOS GENERALES ====== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1d3151;
+    color: #fff;
+}
+
+/* ====== NAV ====== */
+.menu {
+    background-color: #0e1a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #f4c542;
+}
+
+.nav-links a {
+    margin-left: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f4c542;
+}
+
+/* ====== SECCIÓN PLANES ====== */
+#servicios {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#servicios h2 {
+    background-color: #f4c542;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: inline-block;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.planes-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.plan {
+    background-color: #f8d77b;
+    color: #000;
+    width: 300px;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.plan h3 {
+    background-color: #243a63;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.plan ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.plan ul li {
+    margin-bottom: 8px;
+}
+
+.plan button {
+    background-color: #243a63;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.plan button:hover {
+    background-color: #0e1a2a;
+}
+
+.destacado {
+    background-color: #ffe595;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background-color: #0e1a2a;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px 10px;
+}
+
+.contacto, .redes {
+    max-width: 300px;
+    text-align: center;
+}
+
+.contacto a {
+    color: #f4c542;
+    text-decoration: none;
+}
+
+.redes p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.iconos img {
+    width: 35px;
+    margin: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.iconos img:hover {
+    transform: scale(1.2);
+}
+
+.extra {
+    background-color: #243a63;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.extra:hover {
+    background-color: #f4c542;
+    color: #000;
+}
+
+/* ====== RESPONSIVIDAD ====== */
+
+/* 📱 Para pantallas medianas (tablets y pequeñas laptops) */
+@media (max-width: 900px) {
+    .planes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .menu {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+}
+
+/* 📱 Para pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+    #servicios h2 {
+        font-size: 24px;
+        width: 90%;
+    }
+
+    .plan {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .plan h3 {
+        font-size: 20px;
+    }
+
+    .plan ul li {
+        font-size: 14px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contacto, .redes {
+        margin-bottom: 20px;
+    }
+
+    .extra {
+        width: 80%;
+        margin-top: 10px;
+    }
+}

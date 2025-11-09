@@ -1,74 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo.css">
-    <title>FixTime</title>
-    
+    <title>FixTime - Planes de Servicio</title>
+    <link rel="stylesheet" href="css/estilo-servicios.css">
 </head>
 <body>
     <nav class="menu">
-        <a class="logo" href="index.html">Fix<span>Time</span></h1>
-        <a  href="servicios.html">Contratanos</a>
-        <a href="login.html">Iniciar Sesion</a>
+        <a class="logo" href="index.html">Fix<span>Time</span></a>
+        <div class="nav-links">
+            <a href="servicios.html">Contrátanos</a>
+            <a href="login.html">Iniciar Sesión</a>
+        </div>
     </nav>
-    <div id="servicios">
-        <h2 style="text-align: center; font-size: 40px; background-color: white; border-radius: 10px; margin: auto; width: 400px;">Planes de servicio</h2>
-        <div class="contenido-bloque">
-            <div class="bloque">
-                <p>Plan Gratuito</p>
 
+    <section id="servicios">
+        <h2>Planes de servicio</h2>
+        <div class="planes-container">
+            <div class="plan">
+                <h3>Plan Gratuito</h3>
                 <ul>
                     <li>Costo: $0.00</li>
                     <li>Usuario individual</li>
-                    <li>Sincronizacion de un dispositivos</li>
-                    <li>Recordarios basicos</li>
+                    <li>Sincronización de un dispositivo</li>
+                    <li>Recordatorios básicos</li>
                     <li>Incluye anuncios discretos</li>
                     <li>Colaboración no disponible</li>
                 </ul>
-                <button href="MasInfo">Mas informacion</button>
-
+                <button>Más información</button>
             </div>
-            <div class="bloque">
-                <p>Plan Mensual</p>
 
+            <div class="plan destacado">
+                <h3>Plan Mensual</h3>
                 <ul>
                     <li>Costo: $4.99</li>
-                    <li>Sincronizacion multiplataforma</li>
-                    <li>Recordarios avanzados</li>
-                    <li>5Gb de espacio en la nube</li>
+                    <li>Sincronización multiplataforma</li>
+                    <li>Recordatorios avanzados</li>
+                    <li>5 GB de espacio en la nube</li>
                     <li>Colaboración disponible</li>
-                    <li>Archivos activos disponibles</li>
+                    <li>Archivos activos ilimitados</li>
                 </ul>
-                <button href="MasInfo">Mas informacion</button>
-
+                <button>Más información</button>
             </div>
-            <div class="bloque">
-                <p>Plan Anual</p>
+
+            <div class="plan">
+                <h3>Plan Anual</h3>
                 <ul>
                     <li>Costo: $49.99</li>
                     <li>Funciones del plan mensual</li>
-                    <li>Soporte de alta rioridad</li>
+                    <li>Soporte de alta prioridad</li>
                     <li>Acceso temprano a funciones especiales</li>
                     <li>Funciones de administrador</li>
                 </ul>
-                <button href="MasInfo">Mas informacion</button>
-
+                <button>Más información</button>
             </div>
         </div>
-    </div>
+    </section>
+
     <footer>
-        <div class="errores">
-            <p>Reporte de errores:<br>Correo:<br>CCA@gmail.com<br>Teléfono:<br>9999999999</p>
+        <div class="contacto">
+            <h4>Reporte de errores:</h4>
+            <p>Correo: <a href="mailto:CCA@gmail.com">CCA@gmail.com</a></p>
+            <p>Teléfono: 9999999999</p>
         </div>
-        <div class="icono-footer">
-            <img src="iconos/facebook.png" alt="Mantente en contacto">
-            <img src="iconos/reddit.png" alt="Mantente en contacto">
-            <img src="iconos/whatsapp.png" alt="Mantente en contacto">
+        <div class="redes">
+            <p>FixTime forma parte de las aplicaciones de CCA</p>
+            <div class="iconos">
+                <img src="iconos/facebook.png" alt="Facebook">
+                <img src="iconos/reddit.png" alt="Reddit">
+                <img src="iconos/whatsapp.png" alt="WhatsApp">
+            </div>
         </div>
-        
-        <button>Mas herramientas</button>
+        <button class="extra">Más herramientas</button>
     </footer>
 </body>
 </html>
