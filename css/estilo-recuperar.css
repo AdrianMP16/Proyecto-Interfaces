@@ -1,24 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Alexandria", sans-serif;
-}
-
 body {
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;   /* coloca los elementos uno debajo del otro */
+    justify-content: space-between; /* distribuye nav arriba y footer abajo */
+    min-height: 100vh;        /* ocupa toda la altura de la pantalla */
     background-color: rgba(47, 82, 134, 0.998);
+    margin: 0;
 }
 
 /* ---CONTENEDOR PRINCIPAL DEL FORMULARIO DE RECUPERACIÓN ---- */
 
 .recover-password-container {
     display: flex; /* Activa flexbox para centrar contenido */
-
+    flex-direction: column;      /* mantiene los elementos en columna */
+    justify-content: center;     /* centra verticalmente */
+    align-items: center;         /* centra horizontalmente */
+    min-height: 80vh;            /* ocupa casi toda la pantalla */
+    text-align: center; 
     max-width: 400px;  /* Ancho máximo */
     background-color: white; 
     border: 2px solid rgba(255, 255, 255, .2);  /* Borde tenue */
@@ -27,11 +24,9 @@ body {
     border-radius: 10px;
     padding: 50px 50px;  /* Espaciado interno */
     font-size: 16px;
-    display: flex;   /* Usa flexbox */
-    flex-direction: column;  /* Elementos en columna */
     gap: 20px;
     box-sizing: border-box;   /* Incluye borde y padding */
-
+    margin: auto;
 }
 
 /* Efecto al presionar el botón */
