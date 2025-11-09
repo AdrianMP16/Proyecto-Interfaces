@@ -61,6 +61,12 @@ h2{
 .nav-links a:hover {
     color: #f4c542;
 }
+.logo-elementos{
+    display: flex;
+}
+.reloj-img{
+    height: 30px;
+}
 /*--------------------------index*/
 .cuerpo{
     background-color: rgb(34, 60, 110);
@@ -111,25 +117,148 @@ header{
     margin: 30px 30px;
     font-size: 25px;
 }
-.planificador-texto ul,li{
-    flex: 1;
-}
-.planificador{
-    color: black;
+
+.planificador {
+    display: flex; /* Habilita Flexbox para los hijos directos (figure y div) */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    justify-content: center; /* Centra horizontalmente el contenido dentro de la sección si hay espacio extra */
+    padding: 40px 20px; /* Espacio interno superior/inferior y lateral */
+    color: #ffffff; /* Color del texto blanco */
+    margin-top: 50px; /* Margen superior para separarlo del contenido de arriba, ajusta si es necesario */
+    border-radius: 10px; /* Bordes ligeramente redondeados, si lo deseas */
+    gap: 80px; /* Espacio entre la imagen y el texto */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
 }
 
+/* Estilos para el contenedor de la imagen */
+.img-planificador {
+    flex-shrink: 0; /* Evita que la imagen se encoja si no hay suficiente espacio */
+    margin: 0; /* Elimina el margen por defecto de figure */
+    /* Ancho máximo para el contenedor de la imagen, podrías ajustar esto */
+    max-width: 320px; /* O el tamaño que te parezca más adecuado para tu diseño */
+    width: 100%; /* Para que ocupe todo el ancho disponible hasta el max-width */
+}
+
+/* Estilos para la imagen dentro del figure */
+.img-planificador img {
+    max-width: 100%; /* La imagen nunca desbordará su contenedor padre (.img-planificador) */
+    height: auto;    /* Crucial para mantener la proporción y evitar distorsiones */
+    display: block;  /* Elimina el espacio extra debajo de la imagen */
+    border: 8px solid #000000; 
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra sutil para darle profundidad */
+}
+
+
+/* Estilos para el contenedor del texto */
+.planificador-texto {
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+    max-width: 600px; /* Limita el ancho del texto para que no se extienda demasiado */
+    padding: 0 20px; /* Pequeño padding lateral si es necesario */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+
+.planificador-texto h2 {
+    background-color: rgba(252, 224, 150, 1);
+    font-size: 2.3em; /* Tamaño del título*/
+    color: #000000; 
+    margin-bottom: 55px; /* Espacio debajo del título */
+    margin-top: -90px;
+    margin-left: 30px;
+    border-radius: 10px;
+    padding: 8px 15px;
+    display: inline-block;
+}
+
+.planificador-texto p {
+    font-weight: 600;
+    font-size: 1.7em; /* Tamaño del párrafo introductorio */
+    line-height: 1.6; /* Interlineado para mejor lectura */
+    margin-bottom: 25px; /* Espacio debajo del párrafo */
+    margin-left: 10px;
+}
+
+.planificador-texto ul {
+    list-style: none; /* Elimina los puntos por defecto de la lista */
+    padding: 0; /* Elimina el padding por defecto de la lista */
+    margin: 0; /* Elimina el margen por defecto de la lista */
+}
+
+.planificador-texto li {
+    font-size: 1.6em; /* Tamaño de los ítems de la lista */
+    margin-bottom: 10px; /* Espacio entre cada ítem de la lista */
+    position: relative; /* Para posicionar el ícono personalizado */
+    padding-left: 25px; /* Espacio para el ícono */
+    line-height: 1.5;
+}
+
+/*Media query para el contenedor del texto */
+
+/* Media query para pantallas más pequeñas (tabletas y móviles) */
+@media (max-width: 768px) {
+
+    /* 1. Ajuste de la sección principal para apilar */
+    .planificador {
+        /* Cambia la dirección del flexbox para apilar la imagen y el texto verticalmente */
+        flex-direction: column; 
+        padding: 30px 15px; /* Reduce el padding en pantallas pequeñas */
+        gap: 40px; /* Reduce el espacio entre los elementos apilados */
+        text-align: center; /* Centra el texto dentro del contenedor principal */
+    }
+
+    /* 2. Ajuste del contenedor de la imagen */
+    .img-planificador {
+        /* Limita el ancho de la imagen para que no ocupe toda la pantalla */
+        max-width: 80%; 
+        width: 100%;
+        margin-bottom: 20px; /* Añade un espacio después de la imagen antes del texto */
+    }
+
+    /* 3. Ajuste del texto y sus márgenes */
+    .planificador-texto {
+        padding: 0 10px; /* Reduce el padding lateral */
+        text-align: center; /* Asegura que el texto general esté centrado */
+    }
+
+    /* 4. Corrección de la posición y estilo del título H2 (la cajita) */
+    .planificador-texto h2 {
+        font-size: 1.8em; /* Hace el título más pequeño */
+        margin-top: 0; /* Elimina el margen negativo para que no se superponga */
+        margin-left: auto; /* Centra la cajita del título */
+        margin-right: auto;
+        margin-bottom: 30px; /* Ajusta el espacio debajo de la cajita */
+    }
+
+    /* 5. Ajuste del párrafo */
+    .planificador-texto p {
+        font-size: 1.2em; /* Hace el párrafo más pequeño y fácil de leer */
+        margin-left: 0; /* Elimina el margen izquierdo para centrar */
+        padding: 0 10px;
+    }
+
+    /* 6. Ajuste de la lista (UL y LI) */
+    .planificador-texto ul {
+        /* Centra el contenedor de la lista */
+        margin-left: auto;
+        margin-right: auto;
+        /* Limita el ancho de la lista para que no se extienda demasiado */
+        max-width: 350px; 
+    }
+    
+    .planificador-texto li {
+        font-size: 1.2em; /* Hace el texto de la lista más pequeño */
+        text-align: left; /* Mantiene el texto de la lista alineado a la izquierda para mejor lectura */
+        /* Asegurarse que la lista esté contenida si se apila */
+    }
+}
 
 /*----------------------sesion*/
 
-.centro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh; /* deja espacio para el nav y el footer */
-}
 /*----------------------servicios*/
 
 #servicios {
+    background-color: #243a63;
     text-align: center;
     padding: 40px 20px;
 }
@@ -275,6 +404,7 @@ footer {
 .contacto, .redes {
     max-width: 300px;
     text-align: center;
+    color: white;
 }
 
 .contacto a {
