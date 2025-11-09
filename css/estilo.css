@@ -1,4 +1,10 @@
 /*Otros*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Alexandria", sans-serif;
+}
 button{
     background-color: rgb(34, 60, 110);
     color: white;
@@ -33,6 +39,8 @@ h2{
     top: 0;
     z-index: 100;
     font-weight: bold;
+    border: 0 0 4px solid rgb(168, 142, 103);
+    border-radius: 0 10px 10px;
 }
 .logo{
     font-size: 20px;
@@ -50,6 +58,7 @@ h2{
 .cuerpo{
     background-color: rgb(34, 60, 110);
     font-family:'Segoe UI';
+    justify-content: space-between;
 }
 
 header{
@@ -58,25 +67,43 @@ header{
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat; 
     padding: 40px 20px;
-    width: auto;
-    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px auto;
     box-sizing: border-box;
-    height: auto;
+    height: 600px;
 }
 .box-conteiner{
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 15px;
+    border: 4px solid rgba(255, 255, 255, .2);
+    text-align: center;
+    text-align: center;
+    padding: 30px 50px;
 }
 
 .reloj{
     background-color: #FCE096;
     color: black;
+    display: flex;
+    margin: 0;
+    padding: 30px;
+    height: auto;
+    justify-content: space-between;
 }
 .reloj h2{
     text-align: left; 
     font-size: 40px; 
 }
-
+.reloj img{
+    width: 400px;
+    height: 400px;
+}
+.texto-reloj{
+    margin: 30px 30px;
+    font-size: 25px;
+}
 .planificador-texto ul,li{
     flex: 1;
     color: black;
