@@ -1,35 +1,76 @@
-/*Otros*/
+/* =================== FUENTES Y RESETEO =================== */
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Alexandria", sans-serif;
 }
-button{
+
+/* =================== ELEMENTOS BASE =================== */
+button,
+.plan button,
+.extra {
     background-color: rgb(34, 60, 110);
     color: white;
     font-weight: bold;
-    border-radius: 5px;
-    width: 20%;
-    border: salmon;
-    height: 30px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: normal;       
+    word-wrap: break-word;     
+    text-align: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: auto;               
+    min-width: 120px;          
+    max-width: 100%;           
+    box-sizing: border-box;
 }
-button:hover{
+
+button:hover,
+.plan button:hover,
+.extra:hover {
     background-color: rgb(45, 77, 136);
-    height: 32px;
+    transform: scale(1.03);
 }
-h1{
+
+.plan button {
+    background-color: #243a63;
+}
+
+.plan button:hover {
+    background-color: #0e1a2a;
+}
+
+@media (max-width: 768px) {
+    button,
+    .plan button,
+    .extra {
+        font-size: 0.95rem;
+        padding: 8px 16px;
+        width: 100%; 
+        max-width: 260px; 
+        margin: 8px auto;
+        display: block;
+    }
+}
+
+h1 {
     font-weight: bold;
     font-size: 50px;
     text-align: center;
 }
-h2{
+
+h2 {
     font-weight: bold;
     font-size: 30px;
     text-align: center;
 }
-/*Navegacion*/
+
+/* =================== NAVEGACIÓN =================== */
 .menu {
     background-color: #0e1a2a;
     display: flex;
@@ -61,109 +102,131 @@ h2{
 .nav-links a:hover {
     color: #f4c542;
 }
-.logo-elementos{
+
+.logo-elementos {
     display: flex;
 }
-.reloj-img{
+
+.reloj-img {
     height: 30px;
 }
-/*--------------------------index*/
-.cuerpo{
+
+/* =================== INDEX =================== */
+.cuerpo {
     background-color: rgb(34, 60, 110);
-    font-family:'Segoe UI';
-    justify-content: space-between;
+    font-family: 'Segoe UI';
 }
 
-header{
+header {
     background-image: url('../iconos/fondo-inicio.png'); 
-    background-size: cover;       /* Hace que la imagen cubra toda la pantalla */
-    background-position: center;  /* Centra la imagen */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat; 
     padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 20px auto;
-    box-sizing: border-box;
     height: 600px;
 }
-.box-conteiner{
+
+.box-conteiner {
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 15px;
     border: 4px solid rgba(255, 255, 255, .2);
     text-align: center;
-    text-align: center;
     padding: 30px 50px;
 }
 
-.reloj{
+/* =================== BLOQUE RELOJ (CORREGIDO Y RESPONSIVO) =================== */
+.reloj {
     background-color: #0A1936;
-    color: rgb(255, 255, 255);
+    color: white;
     display: flex;
-    margin: 0;
-    padding: 30px;
-    height: auto;
     justify-content: space-between;
-}
-.reloj h2{
-    text-align: left; 
-    font-size: 40px; 
-}
-.reloj img{
-    width: 400px;
-    height: 400px;
-}
-.texto-reloj{
-    margin: 30px 30px;
-    font-size: 25px;
+    align-items: center;
+    padding: 30px;
+    gap: 24px;
+    flex-wrap: nowrap;
 }
 
+.reloj .texto-reloj {
+    flex: 1 1 55%;
+    min-width: 220px;
+    font-size: 1.15rem;
+    text-align: left;
+}
+
+.reloj img {
+    flex: 0 0 40%;
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* --- Responsividad del bloque reloj --- */
+@media (max-width: 768px) {
+    .reloj {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .reloj .texto-reloj {
+        flex-basis: auto;
+        min-width: 0;
+        margin-bottom: 12px;
+    }
+
+    .reloj img {
+        flex-basis: auto;
+        max-width: 80%;
+    }
+}
+
+/* =================== SECCIÓN PLANIFICADOR =================== */
 .planificador {
-    display: flex; /* Habilita Flexbox para los hijos directos (figure y div) */
-    align-items: center; /* Centra verticalmente la imagen y el texto */
-    justify-content: center; /* Centra horizontalmente el contenido dentro de la sección si hay espacio extra */
-    padding: 40px 20px; /* Espacio interno superior/inferior y lateral */
-    color: #ffffff; /* Color del texto blanco */
-    margin-top: 50px; /* Margen superior para separarlo del contenido de arriba, ajusta si es necesario */
-    border-radius: 10px; /* Bordes ligeramente redondeados, si lo deseas */
-    gap: 80px; /* Espacio entre la imagen y el texto */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #ffffff;
+    margin-top: 50px;
+    border-radius: 10px;
+    gap: 80px;
+    flex-wrap: wrap;
 }
 
-/* Estilos para el contenedor de la imagen */
 .img-planificador {
-    flex-shrink: 0; /* Evita que la imagen se encoja si no hay suficiente espacio */
-    margin: 0; /* Elimina el margen por defecto de figure */
-    /* Ancho máximo para el contenedor de la imagen, podrías ajustar esto */
-    max-width: 320px; /* O el tamaño que te parezca más adecuado para tu diseño */
-    width: 100%; /* Para que ocupe todo el ancho disponible hasta el max-width */
+    flex-shrink: 0;
+    max-width: 320px;
+    width: 100%;
 }
 
-/* Estilos para la imagen dentro del figure */
 .img-planificador img {
-    max-width: 100%; /* La imagen nunca desbordará su contenedor padre (.img-planificador) */
-    height: auto;    /* Crucial para mantener la proporción y evitar distorsiones */
-    display: block;  /* Elimina el espacio extra debajo de la imagen */
+    max-width: 100%;
+    height: auto;
+    display: block;
     border: 8px solid #000000; 
-    border-radius: 10px; /* Bordes redondeados para la imagen */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra sutil para darle profundidad */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-
-/* Estilos para el contenedor del texto */
 .planificador-texto {
-    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
-    max-width: 600px; /* Limita el ancho del texto para que no se extienda demasiado */
-    padding: 0 20px; /* Pequeño padding lateral si es necesario */
-    text-align: left; /* Alinea el texto a la izquierda */
+    flex-grow: 1;
+    max-width: 600px;
+    padding: 0 20px;
+    text-align: left;
 }
-
 
 .planificador-texto h2 {
     background-color: rgba(252, 224, 150, 1);
-    font-size: 2.3em; /* Tamaño del título*/
+    font-size: 2.3em;
     color: #000000; 
-    margin-bottom: 55px; /* Espacio debajo del título */
+    margin-bottom: 55px;
     margin-top: -90px;
     margin-left: 30px;
     border-radius: 10px;
@@ -173,90 +236,72 @@ header{
 
 .planificador-texto p {
     font-weight: 600;
-    font-size: 1.7em; /* Tamaño del párrafo introductorio */
-    line-height: 1.6; /* Interlineado para mejor lectura */
-    margin-bottom: 25px; /* Espacio debajo del párrafo */
+    font-size: 1.7em;
+    line-height: 1.6;
+    margin-bottom: 25px;
     margin-left: 10px;
 }
 
 .planificador-texto ul {
-    list-style: none; /* Elimina los puntos por defecto de la lista */
-    padding: 0; /* Elimina el padding por defecto de la lista */
-    margin: 0; /* Elimina el margen por defecto de la lista */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .planificador-texto li {
-    font-size: 1.6em; /* Tamaño de los ítems de la lista */
-    margin-bottom: 10px; /* Espacio entre cada ítem de la lista */
-    position: relative; /* Para posicionar el ícono personalizado */
-    padding-left: 25px; /* Espacio para el ícono */
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
     line-height: 1.5;
 }
 
-/*Media query para el contenedor del texto */
-
-/* Media query para pantallas más pequeñas (tabletas y móviles) */
+/* --- Responsividad del planificador --- */
 @media (max-width: 768px) {
-
-    /* 1. Ajuste de la sección principal para apilar */
     .planificador {
-        /* Cambia la dirección del flexbox para apilar la imagen y el texto verticalmente */
         flex-direction: column; 
-        padding: 30px 15px; /* Reduce el padding en pantallas pequeñas */
-        gap: 40px; /* Reduce el espacio entre los elementos apilados */
-        text-align: center; /* Centra el texto dentro del contenedor principal */
+        padding: 30px 15px;
+        gap: 40px;
+        text-align: center;
     }
 
-    /* 2. Ajuste del contenedor de la imagen */
     .img-planificador {
-        /* Limita el ancho de la imagen para que no ocupe toda la pantalla */
         max-width: 80%; 
-        width: 100%;
-        margin-bottom: 20px; /* Añade un espacio después de la imagen antes del texto */
+        margin-bottom: 20px;
     }
 
-    /* 3. Ajuste del texto y sus márgenes */
     .planificador-texto {
-        padding: 0 10px; /* Reduce el padding lateral */
-        text-align: center; /* Asegura que el texto general esté centrado */
+        padding: 0 10px;
+        text-align: center;
     }
 
-    /* 4. Corrección de la posición y estilo del título H2 (la cajita) */
     .planificador-texto h2 {
-        font-size: 1.8em; /* Hace el título más pequeño */
-        margin-top: 0; /* Elimina el margen negativo para que no se superponga */
-        margin-left: auto; /* Centra la cajita del título */
+        font-size: 1.8em;
+        margin-top: 0;
+        margin-left: auto;
         margin-right: auto;
-        margin-bottom: 30px; /* Ajusta el espacio debajo de la cajita */
+        margin-bottom: 30px;
     }
 
-    /* 5. Ajuste del párrafo */
     .planificador-texto p {
-        font-size: 1.2em; /* Hace el párrafo más pequeño y fácil de leer */
-        margin-left: 0; /* Elimina el margen izquierdo para centrar */
+        font-size: 1.2em;
+        margin-left: 0;
         padding: 0 10px;
     }
 
-    /* 6. Ajuste de la lista (UL y LI) */
     .planificador-texto ul {
-        /* Centra el contenedor de la lista */
         margin-left: auto;
         margin-right: auto;
-        /* Limita el ancho de la lista para que no se extienda demasiado */
-        max-width: 350px; 
+        max-width: 350px;
     }
     
     .planificador-texto li {
-        font-size: 1.2em; /* Hace el texto de la lista más pequeño */
-        text-align: left; /* Mantiene el texto de la lista alineado a la izquierda para mejor lectura */
-        /* Asegurarse que la lista esté contenida si se apila */
+        font-size: 1.2em;
+        text-align: left;
     }
 }
 
-/*----------------------sesion*/
-
-/*----------------------servicios*/
-
+/* =================== SERVICIOS =================== */
 #servicios {
     background-color: #243a63;
     text-align: center;
@@ -331,9 +376,7 @@ header{
     background-color: #ffe595;
 }
 
-/* ====== RESPONSIVIDAD ====== */
-
-/*  medianas (tablets y pequeñas laptops) */
+/* --- Responsividad de servicios --- */
 @media (max-width: 900px) {
     .planes-container {
         flex-direction: column;
@@ -356,7 +399,6 @@ header{
     }
 }
 
-/* pantallas pequeñas (celulares) */
 @media (max-width: 600px) {
     #servicios h2 {
         font-size: 24px;
@@ -375,23 +417,9 @@ header{
     .plan ul li {
         font-size: 14px;
     }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .contacto, .redes {
-        margin-bottom: 20px;
-    }
-
-    .extra {
-        width: 80%;
-        margin-top: 10px;
-    }
 }
-/*footer*/
 
+/* =================== FOOTER =================== */
 footer {
     background-color: #0e1a2a;
     display: flex;
