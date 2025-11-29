@@ -1,80 +1,49 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const carousel = document.querySelector(".carousel");
-    const arrowBtns = document.querySelectorAll(".wrapper i");
-    const wrapper = document.querySelector(".wrapper");
+//jQuery es una librería de JavaScript que te permite escribir cosas difíciles de manera más corta y fácil.
 
-    const firstCard = carousel.querySelector(".card");
-    const firstCardWidth = firstCard.offsetWidth;
+(function () {//se llama inmediantamente al cargarse el sprit sin llamarse desde afuera
+  "use strict";//El modo estricto hace que JavaScript sea más seguro, más predecible y menos permisivo, evitando errores silenciosos y prácticas incorrectas.
 
-    let isDragging = false,
-        startX,
-        startScrollLeft,
-        timeoutId;
-
-    const dragStart = (e) => { 
-        isDragging = true;
-        carousel.classList.add("dragging");
-        startX = e.pageX;
-        startScrollLeft = carousel.scrollLeft;
-    };
-
-    const dragging = (e) => {
-        if (!isDragging) return;
-    
-        // Calculate the new scroll position
-        const newScrollLeft = startScrollLeft - (e.pageX - startX);
-    
-        // Check if the new scroll position exceeds 
-        // the carousel boundaries
-        if (newScrollLeft <= 0 || newScrollLeft >= 
-            carousel.scrollWidth - carousel.offsetWidth) {
-            
-            // If so, prevent further dragging
-            isDragging = false;
-            return;
+  var carousels = function () {
+    //$ es el signo de jquery
+    $(".owl-carousel1").owlCarousel({//convierte cuaquier elemento de .owl-carousel1 en un carrusel
+      loop: true,//crea un loop infinito
+      center: true,//centra los elementos
+      margin: 0,//no hay espacio entre los elementos
+      responsiveClass: true,//agregue clases automáticas según el tamaño actual de la pantalla
+      //nav: false,//Oculta los botones de navegación por defecto.
+      responsive: {//cambia el número de elementos visibles según el ancho de la pantalla
+        0: {//muestra 1 elemento
+          items: 1,
+          nav: false
+        },
+        680: {
+          items: 2,//2 elemento
+          nav: false,
+          loop: true//no habra loop
+        },
+        1000: {//3 elementos
+          items: 3,
+          nav: true
         }
-    
-        // Otherwise, update the scroll position of the carousel
-        carousel.scrollLeft = newScrollLeft;
-    };
-
-    const dragStop = () => {
-        isDragging = false; 
-        carousel.classList.remove("dragging");
-    };
-
-    const autoPlay = () => {
-    
-        // Return if window is smaller than 800
-        if (window.innerWidth < 800) return; 
-        
-        // Calculate the total width of all cards
-        const totalCardWidth = carousel.scrollWidth;
-        
-        // Calculate the maximum scroll position
-        const maxScrollLeft = totalCardWidth - carousel.offsetWidth;
-        
-        // If the carousel is at the end, stop autoplay
-        if (carousel.scrollLeft >= maxScrollLeft) return;
-        
-        // Autoplay the carousel after every 2500ms
-        timeoutId = setTimeout(() => 
-            carousel.scrollLeft += firstCardWidth, 2500);
-    };
-
-    carousel.addEventListener("mousedown", dragStart);
-    carousel.addEventListener("mousemove", dragging);
-    document.addEventListener("mouseup", dragStop);
-    wrapper.addEventListener("mouseenter", () => 
-        clearTimeout(timeoutId));
-    wrapper.addEventListener("mouseleave", autoPlay);
-
-    // Add event listeners for the arrow buttons to 
-    // scroll the carousel left and right
-    arrowBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            carousel.scrollLeft += btn.id === "left" ? 
-                -firstCardWidth : firstCardWidth;
-        });
+      }
     });
-});
+  };
+
+  (function ($) {//se inicializa el carrusel
+    carousels();
+  })(jQuery);
+})();
+
+function toggleCard(card){
+  //querySelector permite buscar elementos dentro de otro elemento, no en toda la página.
+  const img = card.querySelector(".card_img");//no estamos usando id pero debemos controlar todos los elementos de una clase
+  const txt = card.querySelector(".card_txt");
+
+  if (img.style.display != "none") {
+    img.style.display = "none";
+    txt.style.display = "block";
+  }else{
+    img.style.display = "block";
+    txt.style.display = "none";
+  }
+}
