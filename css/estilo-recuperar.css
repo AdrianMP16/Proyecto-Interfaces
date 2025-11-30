@@ -3,8 +3,7 @@ body {
     flex-direction: column;   /* coloca los elementos uno debajo del otro */
     justify-content: space-between; /* distribuye nav arriba y footer abajo */
     min-height: 100vh;        /* ocupa toda la altura de la pantalla */
-    background-color: rgba(47, 82, 134, 0.998);
-    margin: 0;
+    /* background-color: rgba(47, 82, 134, 0.998); */
 }
 
 /* ---CONTENEDOR PRINCIPAL DEL FORMULARIO DE RECUPERACIÓN ---- */
@@ -26,7 +25,7 @@ body {
     font-size: 16px;
     gap: 20px;
     box-sizing: border-box;   /* Incluye borde y padding */
-    margin: auto;
+    margin: 120px auto 10px;
 }
 
 /* Efecto al presionar el botón */

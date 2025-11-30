@@ -18,7 +18,7 @@ body{
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;  /* Espaciado interno */
-    margin: auto;
+    margin: 90px auto 10px;
 }
 
 .wrapper h1{

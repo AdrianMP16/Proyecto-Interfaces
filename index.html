@@ -15,15 +15,18 @@
 <body>
   <nav class="menu">
     <div class="logo-elementos">
-      <img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img" />
-      <a class="logo" href="index.html">Fix<span>Time</span></a>
+      <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img" />Fix<span>Time</span></a>
+      <button class="abrir" id="btnMenu">☰</button>
     </div>
-
+    
     <div class="nav-links">
       <a href="servicios.html">Contrátanos</a>
       <a href="login.html">Iniciar Sesión</a>
     </div>
   </nav>
+  <script src="scripts/menuHamburguesa.js"></script>
+
+
   <div class="cuerpo">
     <header>
       <div class="box-conteiner">
@@ -49,14 +52,14 @@
   </div>
 
   <div class="cards-container">
-    
+
     <!--Tarjeta 1-->
-    
+
     <div class="owl-carousel owl-carousel1 owl-theme">
       <div class="card text-center" onclick="toggleCard(this)">
         <h5>El reloj</h5>
-        <br/>
-        <img src="iconos/focus.png" alt="Mantente enfocado" class="card_img"/>
+        <br />
+        <img src="iconos/focus.png" alt="Mantente enfocado" class="card_img" />
         <div class="card_txt">
           <br />
           <p>
@@ -75,7 +78,7 @@
 
       <div class="card text-center" onclick="toggleCard(this)">
         <h5>Planificador de Tareas</h5>
-        <br/>
+        <br />
         <img class="card_img" src="iconos/planificador.png" alt="Captura del planificador de tareas de FixTime" />
         <div class="card_txt">
           <p>Organiza tu día de forma práctica y productiva:</p>
@@ -96,7 +99,7 @@
       </div>
 
       <div class="card text-center">
-        <h5>Tenemos Precios Accesibles<br /></h5>
+        <h5>Precios Accesibles<br /></h5>
         <div class="card_txt">
         </div>
       </div>
