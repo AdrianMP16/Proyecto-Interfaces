@@ -1,18 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro y Login</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
+    <title>Document</title>
 </head>
 <body>
-
-<h1>Sistema de Registro y Login</h1>
-
-<div class="container">
-
     <!-- REGISTRO -->
     <div class="card" id="registroCard">
         <h2>Registro</h2>
@@ -44,34 +38,6 @@
             <button type="submit">Registrar</button>
         </form>
     </div>
-
-    <!-- LOGIN -->
-    <div class="card" id="loginCard">
-        <h2>Iniciar Sesión</h2>
-        <form id="formLogin">
-            <label>Usuario:</label>
-            <input type="text" id="logUsuario" required>
-
-            <label>Contraseña:</label>
-            <input type="password" id="logPassword" required>
-
-            <button type="submit">Ingresar</button>
-        </form>
-    </div>
-
-    <!-- SISTEMA -->
-    <div class="card hidden" id="sistemaCard">
-        <h2>Bienvenido al Sistema</h2>
-
-        <p id="bienvenida"></p>
-
-        <h3>Tus datos:</h3>
-        <ul id="datosUsuario"></ul>
-
-        <button id="cerrarSesion">Cerrar Sesión</button>
-    </div>
-
-</div>
-
+    <script src="app.js"></script>
 </body>
 </html>

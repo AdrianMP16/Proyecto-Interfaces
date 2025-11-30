@@ -14,10 +14,12 @@ formRegistro.addEventListener("submit", function(e){
         usuario: document.getElementById("regUsuario").value,
         password: document.getElementById("regPassword").value
     };
-
+    console.log("Datos capturados: ", datos);
     localStorage.setItem("datoUsuario", JSON.stringify(datos));
 
     alert("Usuario registrado correctamente");
+    window.location.href="login.html";
+
     formRegistro.reset();
 });
 
@@ -42,6 +44,7 @@ formLogin.addEventListener("submit", function(e){
        passwordIngresado === datosGuardados.password){
 
         mostrarSistema(datosGuardados);
+        window.location.href="dashboard.html";
     } else {
         alert("Usuario o contraseña incorrectos");
     }
@@ -56,11 +59,9 @@ function mostrarSistema(datos){
     document.getElementById("sistemaCard").classList.remove("hidden");
 
     document.getElementById("bienvenida").textContent =
-        `Hola, ${datos.nombres} ${datos.apellidos}`;
+        'Hola, ${datos.nombres} ${datos.apellidos}'
 
-    const lista = document.getElementById("datosUsuario");
-
-    lista.innerHTML = `
+    document.getElementById("datosUsuario").innerHTML = `
         <li><strong>Cédula:</strong> ${datos.cedula}</li>
         <li><strong>Fecha de Nacimiento:</strong> ${datos.fechaNac}</li>
         <li><strong>Correo:</strong> ${datos.correo}</li>
