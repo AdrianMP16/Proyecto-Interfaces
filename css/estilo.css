@@ -78,6 +78,8 @@ h2 {
     align-items: center;
     padding: 15px 40px;
     flex-wrap: wrap;
+    position: sticky;
+    z-index: 50;
 }
 
 .logo {
@@ -160,9 +162,13 @@ header {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 50;
 }
 
 .plan {
+    position: relative;
+    z-index: 50;
     background-color: #f8d77b;
     color: #000;
     width: 300px;
@@ -264,6 +270,8 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     padding: 30px 10px;
+    position: relative;
+    z-index: 50;
 }
 
 .contacto, .redes {
