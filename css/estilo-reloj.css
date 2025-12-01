@@ -17,7 +17,7 @@ body {
 
 /* Mantener main flexible para que el footer quede abajo */
 main {
-    flex: 1 0 auto;
+    flex: 1 auto;
 }
 
 /* ===========================
@@ -173,9 +173,9 @@ main {
 /* ===========================
    VIDEO DE FONDO
 =========================== */
-/* estado inicial oculto */
+
 #video-fondo {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 3s ease;
     position: fixed;
     top: calc( (var(--nav-height, 70px)) ); /* fallback nav height variable */
@@ -183,19 +183,10 @@ main {
     width: 100%;
     height: calc(100vh - (var(--nav-height, 70px) * 2)); /* espacio entre nav y footer */
     object-fit: cover;
-    z-index: 1; /* debajo del contenido (pomodoro tiene z-index 5) */
+    z-index: -1; /* debajo del contenido (pomodoro tiene z-index 5) */
     pointer-events: none;
 }
 
-/* mostrar con fade */
-.video-visible {
-    opacity: 1;
-}
-
-/* ocultar (puede usarse para forzar oculto) */
-.video-hidden {
-    opacity: 0;
-}
 
 /* ===========================
    FOOTER

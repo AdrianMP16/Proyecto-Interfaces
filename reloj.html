@@ -15,15 +15,14 @@
         <a href="#" class="logo">Fix<span>Time</span></a>
 
         <div class="nav-links">
-            <a href="#" id="link-planificador" target="_blank" rel="noopener">Planificador</a>
+            <a href="#" id="link-planificador">Planificador</a>
 
             <div class="perfil-container" id="perfil-container">
                 <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Perfil</button>
                 <img src="iconos/profile.jpg" alt="Perfil" class="perfil-icon" id="icono-perfil">
 
                 <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
-                    <a href="#" role="menuitem">Mi perfil</a>
-                    <a href="#" role="menuitem">Cerrar sesión</a>
+                    <a href="login.html" role="menuitem">Cerrar sesión</a>
                 </div>
             </div>
         </div>
@@ -33,7 +32,7 @@
     <main class="video-background-container">
 
         <!-- VIDEO DE FONDO - inicialmente oculto con la clase video-hidden -->
-        <video muted loop id="video-fondo" class="video-hidden" playsinline>
+        <video autoplay muted loop id="video-fondo" class="video-hidden" playsinline>
             <source src="videos/vid_fondo_reloj.mp4" type="video/mp4">
             Tu navegador no soporta el elemento <code>video</code>.
         </video>
@@ -116,44 +115,10 @@
         }
         updateDisplay();
 
-        // Función segura para mostrar el video con fade-in (3s)
-        function showVideo() {
-            // Aseguramos que el video pueda reproducir (muted permite autoplay en algunos navegadores)
-            try {
-                // remove hidden, add visible
-                video.classList.remove('video-hidden');
-                video.offsetHeight;
-                video.classList.add('video-visible');
-
-                // Intentar reproducir (promise)
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(err => {
-                        console.warn('play() falló:', err);
-                    });
-                }
-            } catch (err) {
-                console.error('Error al mostrar video:', err);
-            }
-        }
-
-        function hideVideoImmediately() {
-            try {
-                video.pause();
-                video.classList.remove('video-visible');
-                video.classList.add('video-hidden');
-            } catch (err) {
-                console.error('Error al ocultar video:', err);
-            }
-        }
-
         function startTimer() {
             console.log('startTimer llamado');
             if (isRunning) return;
             isRunning = true;
-
-            // Mostrar video con fade-in (3s definido en CSS)
-            showVideo();
 
             timer = setInterval(() => {
                 if (timeLeft > 0) {
@@ -163,8 +128,6 @@
                     clearInterval(timer);
                     timer = null;
                     isRunning = false;
-                    // esconder video cuando termine la sesión (opcional)
-                    hideVideoImmediately();
                     alert('¡Pomodoro completado!');
                 }
             }, 1000);
@@ -188,9 +151,6 @@
             isRunning = false;
             timeLeft = 25 * 60;
             updateDisplay();
-
-            // Ocultar video inmediatamente
-            hideVideoImmediately();
         }
 
         // Event listeners
