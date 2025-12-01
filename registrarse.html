@@ -12,36 +12,38 @@
 <body>
     <nav class="menu">
         <div class="logo-elementos">
-            <img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img">
-            <a class="logo" href="index.html">Fix<span>Time</span></a>
+        <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img" />Fix<span>Time</span></a>
+        <button class="abrir" id="btnMenu">☰</button>
         </div>
         
         <div class="nav-links">
-            <a href="servicios.html">Contrátanos</a>
-            <a href="login.html">Iniciar Sesión</a>
+        <a href="servicios.html">Contrátanos</a>
+        <a href="login.html">Iniciar Sesión</a>
         </div>
     </nav>
+    <script src="scripts/menuHamburguesa.js"></script>
+    <br>
     <div class="register-account">
-        <form action="#">
-            
+        <form id="formRegistro">
             <h1>Registrarse</h1>
             <h2>Comienza a organizarte con FixTime!</h2>
             <div class="input-field">
-                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <input type="email" id="email" placeholder="Correo electrónico" required>
                 <i class='bx  bxs-user'    ></i> 
             </div>
             <div class="input-field">
-                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
                 <i class='bx  bxs-lock'    ></i> 
             </div>
             <button type="submit" class="btn">Registrarse</button>
             <div class="login-link"><p>Ya eres miembro? <a href="login.html">Iniciar sesión</a></p></div>
-
         </form>
+        <script src="scripts/registrarse.js"></script>
+
     </div>
     <footer>
         <div class="contacto">
-            <h4>Reporte de errores:</h4>
+            <h4>Reporte de errores</h4>
             <p>Correo: <a href="mailto:CCA@gmail.com">CCA@gmail.com</a></p>
             <p>Teléfono: 9999999999</p>
         </div>

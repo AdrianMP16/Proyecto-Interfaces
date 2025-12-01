@@ -1,24 +1,72 @@
-body{
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
-    min-height: 100vh;        /* Ocupa toda la altura visible */
-    background: url('../iconos/pexels-vlada-karpovich-9969179.jpg') no-repeat;
-    background-size: cover;   /* La imagen cubre todo el fondo */
-    background-position: center; /* Centra la imagen */
-    
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;     /* ocupa toda la ventana */
+    background: url('../iconos/pexels-vlada-karpovich-9969179.jpg') no-repeat center/cover;
+    color: #fff;
 }
 
-.wrapper{
-    display: flex; /* Activa flexbox para centrar contenido */
-    width: 420px;  /* Ancho del contenedor */
-    background: transparent;   /* Fondo transparente */
-    border: 2px solid rgba(255, 255, 255, .2); /* Borde semitransparente */
-    backdrop-filter: blur(20px);  /* Difumina el fondo detrás */
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);   /* Sombra suave */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+nav.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #0e1a2a;
+    height: 70px;
+    box-sizing: border-box;
+}
+
+.logo-elementos {
+    display: flex;
+    align-items: center;
+}
+
+#btnMenu {
+    display: none; /* oculto en desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    flex: 1 0 auto;              /* ocupa espacio entre header y footer */
+    display: flex;
+    justify-content: center;     /* centra la tarjeta horizontalmente */
+    align-items: center;         /* centra la tarjeta verticalmente */
+    padding: 40px 20px;          /* espacio interno para no pegar al borde */
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    width: 420px;
+    background: rgba(0,0,0,0.18);         /* transparente con blur ya aplicado en tu css */
+    border: 2px solid rgba(255, 255, 255, .12);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: #fff;
     border-radius: 10px;
-    padding: 30px 40px;  /* Espaciado interno */
-    margin: auto;
+    padding: 30px 40px;
+    margin: 0 auto;            /* centrado horizontal - ya no empuja verticalmente */
 }
 
 .wrapper h1{
@@ -113,6 +161,24 @@ body{
     text-decoration: underline;
 }
 
+footer {
+    flex: 0 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #0e1a2a;
+}
+
+/* Escritorio */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+#btnMenu {
+    display: none;
+}
+
+
 /* Celulares */
 @media (max-width: 480px) {
     body {
@@ -150,3 +216,46 @@ body{
     }
 }
 
+@media (max-width: 768px) {
+
+    #btnMenu {
+        display: block !important;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1100;
+        color: white; /* para que se vea */
+    }
+
+    .nav-links {
+        display: none !important;  /* oculto */
+        flex-direction: column;
+        gap: 15px;
+        background: #0e1a2a;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        z-index: 1000;
+    }
+
+    .nav-links.activo {
+        display: flex !important;  /* mostrar menu */
+    }
+}
+
+
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    #btnMenu {        
+        display: none;
+    }
+
+}

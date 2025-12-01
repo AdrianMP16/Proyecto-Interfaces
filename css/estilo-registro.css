@@ -19,7 +19,8 @@ body {
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
-    margin: auto;
+    position: relative;
+    margin: 100px auto 10px;
 }
 
 /* --- Títulos --- */

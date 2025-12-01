@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo-recuperar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/fondo.css">
     <title>FixTime</title>
 </head>
 
 <body>
     <nav class="menu">
         <div class="logo-elementos">
-            <img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img">
-            <a class="logo" href="index.html">Fix<span>Time</span></a>
+        <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img" />Fix<span>Time</span></a>
+        <button class="abrir" id="btnMenu">☰</button>
         </div>
         
         <div class="nav-links">
-            <a href="servicios.html">Contrátanos</a>
-            <a href="login.html">Iniciar Sesión</a>
+        <a href="servicios.html">Contrátanos</a>
+        <a href="login.html">Iniciar Sesión</a>
         </div>
     </nav>
+    <script src="scripts/menuHamburguesa.js"></script>
 
-    <div class="recover-password-container">
-        <div class="form-title">
-            Recuperar Contraseña
+    <br>
+
+    <div class="cuerpo">
+        <div class="area">
+            <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            </ul>
         </div>
-        <div class="form-description">
-            Ingresa tu direccion de correo electronico y te enviaremos un mail con instrucciones para recuperar tu
-            contraseña
-        </div>
-        <form class="form">
-            <div class="form-group">
-                <label for="email">Correo electronico</label>
-                <input type="email" id="email" name="email" placeholder="Ingresa tu correo electronico" required>
+        <div class="recover-password-container">
+            <div class="form-title">
+                Recuperar Contraseña
             </div>
-            <button class="form-submit-btn" type="submit">Recuperar contraseña</button>
-            <p class="signup-link">No tiene una cuenta? <a href="registrarse.html"
-                    class="signup-link link">Registrarse</a></p>
-        </form>
+            <div class="form-description">
+                Ingresa tu direccion de correo electronico y te enviaremos un mail con instrucciones para recuperar tu
+                contraseña
+            </div>
+            <form class="form">
+                <div class="form-group">
+                    <label for="email">Correo electronico</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo electronico" required>
+                </div>
+                <button class="form-submit-btn" type="submit">Recuperar contraseña</button>
+                <p class="signup-link">No tiene una cuenta? <a href="registrarse.html"
+                        class="signup-link link">Registrarse</a></p>
+            </form>
 
+        </div>
     </div>
+    
 
     <footer>
         <div class="contacto">
-            <h4>Reporte de errores:</h4>
+            <h4>Reporte de errores</h4>
             <p>Correo: <a href="mailto:CCA@gmail.com">CCA@gmail.com</a></p>
             <p>Teléfono: 9999999999</p>
         </div>
