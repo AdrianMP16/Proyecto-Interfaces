@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>FixTime - Pomodoro</title>
 
-    <link rel="stylesheet" href="css/estilo.css">
     <!-- Enlaza el CSS (cambia la ruta si la has guardado en otro sitio) -->
     <link rel="stylesheet" href="css/estilo-reloj.css">
 </head>
-
 <body class="cuerpo">
-    <script src="scripts/menuHamburguesa.js"></script>
+
     <!-- NAV -->
     <nav class="menu">
-        <div class="logo-elementos">
-            <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj"
-                class="reloj-img" />Fix<span>Time</span></a>
-            <button class="abrir" id="btnMenu">☰</button>
-        </div>
+        <a href="#" class="logo">Fix<span>Time</span></a>
 
         <div class="nav-links">
-            <a href="planificador.html" id="link-planificador">Planificador</a>
+            <a href="planificador.html">Planificador</a>
 
             <div class="perfil-container" id="perfil-container">
-                <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Perfil</button>
+                <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Opciones</button>
                 <img src="iconos/profile.jpg" alt="Perfil" class="perfil-icon" id="icono-perfil">
 
                 <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
@@ -38,10 +31,12 @@
     <!-- MAIN: ocupa el espacio entre nav y footer -->
     <main class="video-background-container">
 
+        <!--Boton para mutear musica-->
+        <button id="btn-mute" class="mute-button">🔊</button>
+
         <!-- VIDEO DE FONDO - inicialmente oculto con la clase video-hidden -->
         <video autoplay muted loop id="video-fondo" class="video-hidden" playsinline>
             <source src="videos/vid_fondo_reloj.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento <code>video</code>.
         </video>
 
         <!-- CONTENIDO ENCIMA DEL VIDEO -->
@@ -58,15 +53,17 @@
 
     </main>
 
-    <audio id="musica-pomodoro">
-        <source src="sonido/flurry-snow.mp3" type="audio/mpeg">
+    <audio id="musica-pomodoro" loop>
+    <source src="sonido/flurry-snow.mp3" type="audio/mpeg">
     </audio>
 
     <!-- FOOTER -->
-   
+    <footer>
+        
+    </footer>
 
     <!-- SCRIPT: temporizador + control video + menú perfil -->
-     <script>
+    <script>
     (function () {
         /********** MENU PERFIL **********/
         const perfilBtn = document.getElementById('perfil-btn');
@@ -98,6 +95,15 @@
         const resetBtn = document.getElementById('reset');
         const display = document.getElementById('timer');
         const video = document.getElementById('video-fondo');
+        const musica = document.getElementById("musica-pomodoro");
+        const btnMute = document.getElementById("btn-mute");
+
+        btnMute.addEventListener("click", () => {
+        musica.muted = !musica.muted;
+
+        // Cambiar icono dinámicamente
+        btnMute.textContent = musica.muted ? "🔇" : "🔊";
+        });
 
         // Configuración inicial
         let timeLeft = 25 * 60; // segundos
@@ -173,5 +179,4 @@
     </script>
 
 </body>
-
 </html>

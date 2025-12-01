@@ -479,17 +479,18 @@ footer p {
     gap: 30px;
 }
 
-.nav-links a {
-    color: rgb(244, 133, 63);
-    font-weight: 600;
-    font-size: 1.1rem;
+#link-planificador {
     text-decoration: none;
-    transition: 0.3s ease;
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: rgb(227, 106, 42);
+#link-planificador:hover {
+    color: #f4c542;
 }
+
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
