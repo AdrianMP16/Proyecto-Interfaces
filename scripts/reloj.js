@@ -1,73 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FixTime - Pomodoro</title>
-
-    <link rel="stylesheet" href="css/estilo.css">
-    <!-- Enlaza el CSS (cambia la ruta si la has guardado en otro sitio) -->
-    <link rel="stylesheet" href="css/estilo-reloj.css">
-</head>
-
-<body class="cuerpo">
-    <script src="scripts/menuHamburguesa.js"></script>
-    <!-- NAV -->
-    <nav class="menu">
-        <div class="logo-elementos">
-            <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj"
-                class="reloj-img" />Fix<span>Time</span></a>
-            <button class="abrir" id="btnMenu">☰</button>
-        </div>
-
-        <div class="nav-links">
-            <a href="planificador.html" id="link-planificador">Planificador</a>
-
-            <div class="perfil-container" id="perfil-container">
-                <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Perfil</button>
-                <img src="iconos/profile.jpg" alt="Perfil" class="perfil-icon" id="icono-perfil">
-
-                <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
-                    <a href="login.html" role="menuitem">Cerrar sesión</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- MAIN: ocupa el espacio entre nav y footer -->
-    <main class="video-background-container">
-
-        <!-- VIDEO DE FONDO - inicialmente oculto con la clase video-hidden -->
-        <video autoplay muted loop id="video-fondo" class="video-hidden" playsinline>
-            <source src="videos/vid_fondo_reloj.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento <code>video</code>.
-        </video>
-
-        <!-- CONTENIDO ENCIMA DEL VIDEO -->
-        <div class="contenedor-pomodoro" role="region" aria-label="Temporizador Pomodoro">
-            <h2>Reloj Pomodoro</h2>
-            <div id="timer" aria-live="polite">25:00</div>
-
-            <div class="botones-pomodoro" role="group" aria-label="Controles del temporizador">
-                <button id="start">Iniciar</button>
-                <button id="pause">Pausar</button>
-                <button id="reset">Reiniciar</button>
-            </div>
-        </div>
-
-    </main>
-
-    <audio id="musica-pomodoro">
-        <source src="sonido/flurry-snow.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- FOOTER -->
-   
-
-    <!-- SCRIPT: temporizador + control video + menú perfil -->
-     <script>
-    (function () {
+(function () {
         /********** MENU PERFIL **********/
         const perfilBtn = document.getElementById('perfil-btn');
         const iconoPerfil = document.getElementById('icono-perfil');
@@ -170,8 +101,3 @@
         };
 
     })();
-    </script>
-
-</body>
-
-</html>

@@ -19,7 +19,7 @@ formLogin.addEventListener("submit", function(e){
     if(usuarioIngresado === datosGuardados.email &&
        passwordIngresado === datosGuardados.password){
 
-        window.location.href="reloj.html";
+        window.location.href="planificador.html";
     } else {
         errorMensaje.textContent = "Usuario o contraseña incorrectos";
     }
