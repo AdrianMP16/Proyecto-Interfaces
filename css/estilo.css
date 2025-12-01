@@ -1,6 +1,20 @@
 /* =================== FUENTES Y RESETEO =================== */
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -147,13 +161,13 @@ header {
     align-items: center;
     padding: 30px;
     gap: 24px;
+    font-size: 30px;
     flex-wrap: nowrap;
 }
 
 .reloj .texto-reloj {
     flex: 1 1 55%;
     min-width: 220px;
-    font-size: 1.15rem;
     text-align: left;
 }
 
@@ -423,7 +437,7 @@ header {
 footer {
     background-color: #0e1a2a;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 30px 10px;
