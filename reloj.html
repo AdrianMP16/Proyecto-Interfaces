@@ -31,10 +31,12 @@
     <!-- MAIN: ocupa el espacio entre nav y footer -->
     <main class="video-background-container">
 
+        <!--Boton para mutear musica-->
+        <button id="btn-mute" class="mute-button">🔊</button>
+
         <!-- VIDEO DE FONDO - inicialmente oculto con la clase video-hidden -->
         <video autoplay muted loop id="video-fondo" class="video-hidden" playsinline>
             <source src="videos/vid_fondo_reloj.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento <code>video</code>.
         </video>
 
         <!-- CONTENIDO ENCIMA DEL VIDEO -->
@@ -51,7 +53,7 @@
 
     </main>
 
-    <audio id="musica-pomodoro">
+    <audio id="musica-pomodoro" loop>
     <source src="sonido/flurry-snow.mp3" type="audio/mpeg">
     </audio>
 
@@ -106,6 +108,15 @@
         const resetBtn = document.getElementById('reset');
         const display = document.getElementById('timer');
         const video = document.getElementById('video-fondo');
+        const musica = document.getElementById("musica-pomodoro");
+        const btnMute = document.getElementById("btn-mute");
+
+        btnMute.addEventListener("click", () => {
+        musica.muted = !musica.muted;
+
+        // Cambiar icono dinámicamente
+        btnMute.textContent = musica.muted ? "🔇" : "🔊";
+        });
 
         // Configuración inicial
         let timeLeft = 25 * 60; // segundos
