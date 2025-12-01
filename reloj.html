@@ -19,7 +19,7 @@
 
             <div class="perfil-container" id="perfil-container">
                 <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Perfil</button>
-                <img src="iconos/profile.png" alt="Perfil" class="perfil-icon" id="icono-perfil">
+                <img src="iconos/profile.jpg" alt="Perfil" class="perfil-icon" id="icono-perfil">
 
                 <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
                     <a href="#" role="menuitem">Mi perfil</a>
@@ -122,8 +122,6 @@
             try {
                 // remove hidden, add visible
                 video.classList.remove('video-hidden');
-                // force reflow to ensure transition works reliably
-                // eslint-disable-next-line no-unused-expressions
                 video.offsetHeight;
                 video.classList.add('video-visible');
 
