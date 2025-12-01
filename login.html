@@ -24,24 +24,28 @@
 
     <br>
     <div class="wrapper">
-        <form action="">
+        <form id="formLogin">
             <h1>Iniciar Sesion</h1>
             <div class="input-box">
-                <input type="email" placeholder="Correo electronico" required>
+                <input type="email" id="email" placeholder="Correo electronico" required>
                 <i class='bx  bxs-user'    ></i> 
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Contraseña" required>
+                <input type="password" id="clave" placeholder="Contraseña" required>
                 <i class='bx  bxs-lock'    ></i> 
             </div>
             <div class="remember-forgot">
                 <label><input type="checkbox">Recuérdame</label>
                 <a href="recuperar.html">Olvidastes tu contraseña?</a>
             </div>
-            <button type="submit" class="btn">Iniciar Sesion</button>
+            <p id="error" style="color: red;"></p>
+
+            <button type="submit" id="btn">Iniciar Sesion</button>
             <div class="register-link"><p>No tiene una cuenta? <a href="registrarse.html">Registrarse</a></p></div>
 
         </form>
+        <script src="scripts/login.js"></script>
+
     </div>
     <footer>
         <div class="contacto">
