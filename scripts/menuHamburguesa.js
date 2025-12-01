@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("btnMenu");         // coincide con id en HTML
-  const nav = document.querySelector(".nav-links");      // coincide con class en HTML
-
-  if (!btn || !nav) {
-    console.warn("menu: btn o nav no encontrado");
-    return;
-  }
+  const btn = document.getElementById("btnMenu");
+  const nav = document.querySelector(".nav-links");
 
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -13,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.textContent = nav.classList.contains("activo") ? "✖" : "☰";
   });
 
-  // cerrar al click fuera
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".menu") && nav.classList.contains("activo")) {
       nav.classList.remove("activo");
@@ -21,3 +15,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
