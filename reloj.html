@@ -15,10 +15,10 @@
         <a href="#" class="logo">Fix<span>Time</span></a>
 
         <div class="nav-links">
-            <a href="#" id="link-planificador">Planificador</a>
+            <a href="#">Planificador</a>
 
             <div class="perfil-container" id="perfil-container">
-                <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Perfil</button>
+                <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Opciones</button>
                 <img src="iconos/profile.jpg" alt="Perfil" class="perfil-icon" id="icono-perfil">
 
                 <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
@@ -50,6 +50,10 @@
         </div>
 
     </main>
+
+    <audio id="musica-pomodoro">
+    <source src="sonido/flurry-snow.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- FOOTER -->
     <footer>
@@ -131,6 +135,9 @@
                     alert('¡Pomodoro completado!');
                 }
             }, 1000);
+
+            let musica = document.getElementById("musica-pomodoro");
+            musica.play();
         }
 
         function pauseTimer() {
@@ -140,6 +147,9 @@
                 timer = null;
             }
             isRunning = false;
+
+            let musica = document.getElementById("musica-pomodoro");
+            musica.pause();
         }
 
         function resetTimer() {
@@ -151,6 +161,10 @@
             isRunning = false;
             timeLeft = 25 * 60;
             updateDisplay();
+
+            let musica = document.getElementById("musica-pomodoro");
+            musica.pause();
+            musica.currentTime = 0;
         }
 
         // Event listeners
