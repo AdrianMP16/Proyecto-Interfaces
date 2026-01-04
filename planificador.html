@@ -11,33 +11,33 @@
   <link rel="icon" href="img/favicon.png" type="image/png" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/estilo.css">
-  
+
 </head>
 
 <body>
   <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="menu">
-        <div class="logo-elementos">
-          <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj"
-            class="reloj-img" />Fix<span>Time</span></a>
-          <button class="abrir" id="btnMenu">☰</button>
+  <nav class="menu">
+    <div class="logo-elementos">
+      <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj"
+          class="reloj-img" />Fix<span>Time</span></a>
+      <button class="abrir" id="btnMenu">☰</button>
+    </div>
+
+    <div class="nav-links">
+      <a href="reloj.html" id="link-planificador">Reloj Pomodoro</a>
+
+      <div class="perfil-container" id="perfil-container">
+        <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Perfil</button>
+        <img src="iconos/profile.jpg" alt="Perfil" class="perfil-icon" id="icono-perfil">
+
+        <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
+          <a href="login.html" role="menuitem">Cerrar sesión</a>
         </div>
-
-        <div class="nav-links">
-            <a href="reloj.html" id="link-planificador">Reloj Pomodoro</a>
-
-            <div class="perfil-container" id="perfil-container">
-                <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Perfil</button>
-                <img src="iconos/profile.jpg" alt="Perfil" class="perfil-icon" id="icono-perfil">
-
-                <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
-                  <a href="login.html" role="menuitem">Cerrar sesión</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <script src="scripts/reloj.js"></script>
-    <script src="scripts/menuHamburguesa.js"></script>
+      </div>
+    </div>
+  </nav>
+  <script src="scripts/reloj.js"></script>
+  <script src="scripts/menuHamburguesa.js"></script>
   <header>
 
     <!-- FIN MENÚ -->
@@ -77,7 +77,7 @@
 
   <script src="scripts/app.js"></script>
 
-  
+
 </body>
 
 </html>

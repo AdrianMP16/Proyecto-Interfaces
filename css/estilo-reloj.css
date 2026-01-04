@@ -127,7 +127,7 @@ main {
     position: relative;
     z-index: 5;
 }
-
+footer
 
 /* Título y timer */
 .contenedor-pomodoro h2 {
@@ -195,10 +195,12 @@ main {
 footer {
     background-color: #0e1a2a;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     padding: 30px 10px;
+    position: relative;
+    z-index: 50;
 }
 
 .contacto, .redes {
