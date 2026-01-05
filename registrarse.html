@@ -1,61 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/estilo-registro.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>FixTime</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
-<body>
-    <nav class="menu">
-        <div class="logo-elementos">
-        <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img" />Fix<span>Time</span></a>
-        <button class="abrir" id="btnMenu">☰</button>
-        </div>
-        
-        <div class="nav-links">
-        <a href="servicios.html">Contrátanos</a>
-        <a href="login.html">Iniciar Sesión</a>
-        </div>
-    </nav>
-    <script src="scripts/menuHamburguesa.js"></script>
+
+<body class="flex flex-col min-h-screen text-white bg-cover bg-center bg-no-repeat p-0 md:p-0 sm:p-2"
+    style="background-image: url('../iconos/background.jpg');">
+    <!--menu -->
+    <div id="header"></div>
     <br>
-    <div class="register-account">
+    <!--register-account -->
+    <div
+        class="register-account flex flex-col justify-center items-center w-[420px] bg-transparent border border-white/20 backdrop-blur-[20px] shadow-md text-white rounded-[10px] p-[30px_40px] relative my-[100px] mx-auto">
         <form id="formRegistro">
-            <h1>Registrarse</h1>
-            <h2>Comienza a organizarte con FixTime!</h2>
-            <div class="input-field">
-                <input type="email" id="email" placeholder="Correo electrónico" required>
-                <i class='bx  bxs-user'    ></i> 
+            <h1 class="text-[40px] text-center">Registrarse</h1>
+            <h2 class="text-[beige] p-2 text-[20px] text-center font-normal">Comienza a organizarte con FixTime!</h2>
+
+            <!-- input-field -->
+            <div class="relative w-full h-[50px] my-[30px]">
+                <input type="email" id="email" placeholder="Correo electrónico"
+                    class="w-full h-full bg-transparent border border-white/20 rounded-[40px] text-[16px] text-white px-5 pr-[45px] outline-none"
+                    required>
+                <i class='bx bxs-user absolute right-5 top-1/2 -translate-y-1/2 text-[20px]'></i>
             </div>
-            <div class="input-field">
-                <input type="password" id="password" placeholder="Contraseña" required>
-                <i class='bx  bxs-lock'    ></i> 
+            <!-- input-field -->
+
+            <div class="relative w-full h-[50px] my-[30px]">
+                <input type="password" id="password" placeholder="Contraseña"
+                    class="w-full h-full bg-transparent border border-white/20 rounded-[40px] text-[16px] text-white px-5 pr-[45px] outline-none"
+                    required>
+                <i class='bx bxs-lock absolute right-5 top-1/2 -translate-y-1/2 text-[20px]'></i>
             </div>
-            <button type="submit" class="btn">Registrarse</button>
-            <div class="login-link"><p>Ya eres miembro? <a href="login.html">Iniciar sesión</a></p></div>
+
+            <button type="submit"
+                class="btn w-full h-[45px] bg-white text-[#333] font-bold rounded-[40px] shadow-[0_0_10px_rgba(0,0,0,0.1)] cursor-pointer">Registrarse</button>
+            <div class="login-link text-[14.5px] text-center my-[20px]">
+                <p>Ya eres miembro? <a href="login.html"
+                        class="text-[#f8f7f7] font-bold no-underline hover:underline">Iniciar sesión</a></p>
+            </div>
         </form>
         <script src="scripts/registrarse.js"></script>
 
     </div>
-    <footer>
-        <div class="contacto">
-            <h4>Reporte de errores</h4>
-            <p>Correo: <a href="mailto:CCA@gmail.com">CCA@gmail.com</a></p>
-            <p>Teléfono: 9999999999</p>
-        </div>
-        <div class="redes">
-            <p>FixTime forma parte de las aplicaciones de CCA</p>
-            <div class="iconos">
-                <img src="iconos/facebook.png" alt="Facebook">
-                <img src="iconos/reddit.png" alt="Reddit">
-                <img src="iconos/whatsapp.png" alt="WhatsApp">
-            </div>
-        </div>
-        <button class="extra">Más herramientas</button>
-    </footer>
+    <footer id="footer"></footer>
+
+    <script src="scripts/cargarComponentes.js"></script>
 </body>
+
 </html>

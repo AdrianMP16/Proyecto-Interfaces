@@ -4,98 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FixTime - Planes de Servicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" media="all" href="css/fondo.css" />
 </head>
 <body>
-    <nav class="menu">
-        <div class="logo-elementos">
-        <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img" />Fix<span>Time</span></a>
-        <button class="abrir" id="btnMenu">☰</button>
-        </div>
-        
-        <div class="nav-links">
-        <a href="servicios.html">Contrátanos</a>
-        <a href="login.html">Iniciar Sesión</a>
-        </div>
-    </nav>
-    <script src="scripts/menuHamburguesa.js"></script>
+    <div id="header"></div>
 
     <br><br><br>
-    <section id="servicios">
+    <section id="servicios" class="bg-[#243a63] text-center py-[40px] px-[20px]">
         
         <h2>Planes de servicio</h2>
-        <div class="planes-container">
-            <div class="plan">
-                <h3>Plan Gratuito</h3>
-                <ul>
-                    <li>Costo: $0.00</li>
-                    <li>Usuario individual</li>
-                    <li>Sincronización de un dispositivo</li>
-                    <li>Recordatorios básicos</li>
-                    <li>Incluye anuncios discretos</li>
-                    <li>Colaboración no disponible</li>
+        <!-- planes-container  -->
+        <div class="flex justify-center flex-wrap gap-[30px] relative z-[50] planes-container">
+            <!-- plan  -->
+            <div class="plan relative z-[50] bg-[#f8d77b] text-black w-[300px] rounded-[12px] p-[20px] shadow-[0_4px_10px_rgba(0,0,0,0.3)] transform transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.5)]">
+                <h3 class="bg-[#243a63] text-white rounded-[8px] p-[10px]">Plan Gratuito</h3>
+                <ul class="text-left list-none p-0 my-[15px]">
+                    <li class="mb-2">Costo: $0.00</li>
+                    <li class="mb-2">Usuario individual</li>
+                    <li class="mb-2">Sincronización de un dispositivo</li>
+                    <li class="mb-2">Recordatorios básicos</li>
+                    <li class="mb-2">Incluye anuncios discretos</li>
+                    <li class="mb-2">Colaboración no disponible</li>
                 </ul>
-                <button>Más información</button>
+                <button class="bg-[#243a63] text-white border-0 px-[20px] py-[10px] rounded-[10px] cursor-pointer transition-colors duration-300 hover:bg-[#0e1a2a]">Más información</button>
             </div>
 
-            <div class="plan destacado">
-                <h3>Plan Mensual</h3>
-                <ul>
-                    <li>Costo: $4.99</li>
-                    <li>Sincronización multiplataforma</li>
-                    <li>Recordatorios avanzados</li>
-                    <li>5 GB de espacio en la nube</li>
-                    <li>Colaboración disponible</li>
-                    <li>Archivos activos ilimitados</li>
+            <div class="plan relative z-[50] bg-[#f8d77b] text-black w-[300px] rounded-[12px] p-[20px] shadow-[0_4px_10px_rgba(0,0,0,0.3)] transform transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.5)]">
+                <h3 class="bg-[#243a63] text-white rounded-[8px] p-[10px]">Plan Mensual</h3>
+                <ul class="text-left list-none p-0 my-[15px]">
+                    <li class="mb-2">Costo: $4.99</li>
+                    <li class="mb-2">Sincronización multiplataforma</li>
+                    <li class="mb-2">Recordatorios avanzados</li>
+                    <li class="mb-2">5 GB de espacio en la nube</li>
+                    <li class="mb-2">Colaboración disponible</li>
+                    <li class="mb-2">Archivos activos ilimitados</li>
                 </ul>
-                <button>Más información</button>
+                <button class="bg-[#243a63] text-white border-0 px-[20px] py-[10px] rounded-[10px] cursor-pointer transition-colors duration-300 hover:bg-[#0e1a2a]">Más información</button>
             </div>
 
-            <div class="plan">
-                <h3>Plan Anual</h3>
-                <ul>
-                    <li>Costo: $49.99</li>
-                    <li>Funciones del plan mensual</li>
-                    <li>Soporte de alta prioridad</li>
-                    <li>Acceso temprano a funciones especiales</li>
-                    <li>Funciones de administrador</li>
+            <div class="relative z-[50] bg-[#f8d77b] text-black w-[300px] rounded-[12px] p-[20px] shadow-[0_4px_10px_rgba(0,0,0,0.3)] transform transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.5)]">
+                <h3 class="bg-[#243a63] text-white rounded-[8px] p-[10px]">Plan Anual</h3>
+                <ul class="text-left list-none p-0 my-[15px]">
+                    <li class="mb-2">Costo: $49.99</li>
+                    <li class="mb-2">Funciones del plan mensual</li>
+                    <li class="mb-2">Soporte de alta prioridad</li>
+                    <li class="mb-2">Acceso temprano a funciones especiales</li>
+                    <li class="mb-2">Funciones de administrador</li>
                 </ul>
-                <button>Más información</button>
+                <button class="bg-[#243a63] text-white border-0 px-[20px] py-[10px] rounded-[10px] cursor-pointer transition-colors duration-300 hover:bg-[#0e1a2a]">Más información</button>
             </div>
         </div>
     </section>
-        <div class="area">
-            <ul class="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
+        
+    <div id="area"></div>
 
-    
-    <footer>
-        <div class="contacto">
-            <h4>Reporte de errores</h4>
-            <p>Correo: <a href="mailto:CCA@gmail.com">CCA@gmail.com</a></p>
-            <p>Teléfono: 9999999999</p>
-        </div>
-        <div class="redes">
-            <p>FixTime forma parte de las aplicaciones de CCA</p>
-            <div class="iconos">
-                <img src="iconos/facebook.png" alt="Facebook">
-                <img src="iconos/reddit.png" alt="Reddit">
-                <img src="iconos/whatsapp.png" alt="WhatsApp">
-            </div>
-        </div>
-        <button class="extra">Más herramientas</button>
-    </footer>
+    <footer id="footer"></footer>
+
+    <script src="scripts/cargarComponentes.js"></script>
+    <script src="scripts/cargarFondo.js"></script>
 </body>
 </html>

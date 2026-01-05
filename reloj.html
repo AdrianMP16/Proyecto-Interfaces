@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FixTime - Pomodoro</title>
 
     <!-- Enlaza el CSS (cambia la ruta si la has guardado en otro sitio) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/estilo-reloj.css">
 </head>
+
 <body class="cuerpo">
 
     <!-- NAV -->
-    <nav class="menu">
-        <a href="#" class="logo">Fix<span>Time</span></a>
 
-        <div class="nav-links">
-            <a href="planificador.html">Planificador</a>
+    <!-- menu -->
+    <nav class="w-full py-4 px-8 bg-[#0e1a2a] flex justify-between items-center box-border">
+        <!-- logo -->
+        <a href="#" class="text-[26px] text-white no-underline font-bold">Fix<span
+                class="text-[#f4c542]">Time</span></a>
+        <!-- nav-links -->
+        <div class="flex items-center gap-[30px]">
+            <a href="planificador.html"
+                class="no-underline text-white text-base px-3 py-2 transition duration-300 hover:text-[#f4c542]">Planificador</a>
 
-            <div class="perfil-container" id="perfil-container">
-                <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Opciones</button>
-                <img src="iconos/profile.jpg" alt="Perfil" class="perfil-icon" id="icono-perfil">
+            <!-- perfil-container -->
+            <div class="flex items-center gap-2 relative" id="perfil-container">
+                <!-- perfil-btn -->
 
-                <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
-                    <a href="login.html" role="menuitem">Cerrar sesión</a>
+                <button id="perfil-btn" class="bg-transparent text-white border-0 text-base cursor-pointer"
+                    aria-haspopup="true" aria-expanded="false">Opciones</button>
+
+                <!-- perfil-icon -->
+                <img src="iconos/profile.jpg" alt="Perfil"
+                    class="w-9 h-9 rounded-full object-cover border-2 border-[#243a63] bg-center bg-cover bg-no-repeat"
+                    id="icono-perfil">
+
+                <!-- dropdown-menu -->
+                <div class="absolute right-0 bg-[#2c2c2c] w-[170px] rounded-[10px] shadow-[0_8px_20px_rgba(0,0,0,0.4)] z-50 hidden"
+                    style="top: calc(100% + 8px);" id="dropdown-menu" role="menu" aria-hidden="true">
+                    <a href="login.html" role="menuitem"
+                        class="block px-3 py-2 no-underline text-white hover:bg-[#243a63] hover:text-[#f4c542]">Cerrar
+                        sesión</a>
                 </div>
             </div>
         </div>
@@ -54,129 +74,130 @@
     </main>
 
     <audio id="musica-pomodoro" loop>
-    <source src="sonido/flurry-snow.mp3" type="audio/mpeg">
+        <source src="sonido/flurry-snow.mp3" type="audio/mpeg">
     </audio>
 
     <!-- FOOTER -->
     <footer>
-        
+
     </footer>
 
     <!-- SCRIPT: temporizador + control video + menú perfil -->
     <script>
-    (function () {
-        /********** MENU PERFIL **********/
-        const perfilBtn = document.getElementById('perfil-btn');
-        const iconoPerfil = document.getElementById('icono-perfil');
-        const dropdown = document.getElementById('dropdown-menu');
-        const perfilContainer = document.getElementById('perfil-container');
+        (function () {
+            /********** MENU PERFIL **********/
+            const perfilBtn = document.getElementById('perfil-btn');
+            const iconoPerfil = document.getElementById('icono-perfil');
+            const dropdown = document.getElementById('dropdown-menu');
+            const perfilContainer = document.getElementById('perfil-container');
 
-        function toggleMenu() {
-            const isOpen = dropdown.style.display === 'block';
-            dropdown.style.display = isOpen ? 'none' : 'block';
-            perfilBtn.setAttribute('aria-expanded', String(!isOpen));
-            dropdown.setAttribute('aria-hidden', String(isOpen));
-        }
-        perfilBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
-        iconoPerfil && iconoPerfil.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
-
-        // Cerrar si se hace click fuera
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.perfil-container')) {
-                dropdown.style.display = 'none';
-                perfilBtn.setAttribute('aria-expanded', 'false');
-                dropdown.setAttribute('aria-hidden', 'true');
+            function toggleMenu() {
+                const isOpen = dropdown.style.display === 'block';
+                dropdown.style.display = isOpen ? 'none' : 'block';
+                perfilBtn.setAttribute('aria-expanded', String(!isOpen));
+                dropdown.setAttribute('aria-hidden', String(isOpen));
             }
-        });
+            perfilBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
+            iconoPerfil && iconoPerfil.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
 
-        /********** TEMPORIZADOR + VIDEO **********/
-        const startBtn = document.getElementById('start');
-        const pauseBtn = document.getElementById('pause');
-        const resetBtn = document.getElementById('reset');
-        const display = document.getElementById('timer');
-        const video = document.getElementById('video-fondo');
-        const musica = document.getElementById("musica-pomodoro");
-        const btnMute = document.getElementById("btn-mute");
-
-        btnMute.addEventListener("click", () => {
-        musica.muted = !musica.muted;
-
-        // Cambiar icono dinámicamente
-        btnMute.textContent = musica.muted ? "🔇" : "🔊";
-        });
-
-        // Configuración inicial
-        let timeLeft = 25 * 60; // segundos
-        let timer = null;
-        let isRunning = false;
-
-        function updateDisplay() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            display.textContent = `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-        }
-        updateDisplay();
-
-        function startTimer() {
-            console.log('startTimer llamado');
-            if (isRunning) return;
-            isRunning = true;
-
-            timer = setInterval(() => {
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    updateDisplay();
-                } else {
-                    clearInterval(timer);
-                    timer = null;
-                    isRunning = false;
-                    alert('¡Pomodoro completado!');
+            // Cerrar si se hace click fuera
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.perfil-container')) {
+                    dropdown.style.display = 'none';
+                    perfilBtn.setAttribute('aria-expanded', 'false');
+                    dropdown.setAttribute('aria-hidden', 'true');
                 }
-            }, 1000);
+            });
 
-            let musica = document.getElementById("musica-pomodoro");
-            musica.play();
-        }
+            /********** TEMPORIZADOR + VIDEO **********/
+            const startBtn = document.getElementById('start');
+            const pauseBtn = document.getElementById('pause');
+            const resetBtn = document.getElementById('reset');
+            const display = document.getElementById('timer');
+            const video = document.getElementById('video-fondo');
+            const musica = document.getElementById("musica-pomodoro");
+            const btnMute = document.getElementById("btn-mute");
 
-        function pauseTimer() {
-            console.log('pauseTimer llamado');
-            if (timer) {
-                clearInterval(timer);
-                timer = null;
+            btnMute.addEventListener("click", () => {
+                musica.muted = !musica.muted;
+
+                // Cambiar icono dinámicamente
+                btnMute.textContent = musica.muted ? "🔇" : "🔊";
+            });
+
+            // Configuración inicial
+            let timeLeft = 25 * 60; // segundos
+            let timer = null;
+            let isRunning = false;
+
+            function updateDisplay() {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             }
-            isRunning = false;
-
-            let musica = document.getElementById("musica-pomodoro");
-            musica.pause();
-        }
-
-        function resetTimer() {
-            console.log('resetTimer llamado');
-            if (timer) {
-                clearInterval(timer);
-                timer = null;
-            }
-            isRunning = false;
-            timeLeft = 25 * 60;
             updateDisplay();
 
-            let musica = document.getElementById("musica-pomodoro");
-            musica.pause();
-            musica.currentTime = 0;
-        }
+            function startTimer() {
+                console.log('startTimer llamado');
+                if (isRunning) return;
+                isRunning = true;
 
-        // Event listeners
-        startBtn.addEventListener('click', startTimer);
-        pauseBtn.addEventListener('click', pauseTimer);
-        resetBtn.addEventListener('click', resetTimer);
+                timer = setInterval(() => {
+                    if (timeLeft > 0) {
+                        timeLeft--;
+                        updateDisplay();
+                    } else {
+                        clearInterval(timer);
+                        timer = null;
+                        isRunning = false;
+                        alert('¡Pomodoro completado!');
+                    }
+                }, 1000);
 
-        // DEBUG helpers: imprime estado al abrir consola
-        window.__FIXTIME_DEBUG = {
-            getState: () => ({ isRunning, timeLeft, videoClassList: video.className })
-        };
+                let musica = document.getElementById("musica-pomodoro");
+                musica.play();
+            }
 
-    })();
+            function pauseTimer() {
+                console.log('pauseTimer llamado');
+                if (timer) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+                isRunning = false;
+
+                let musica = document.getElementById("musica-pomodoro");
+                musica.pause();
+            }
+
+            function resetTimer() {
+                console.log('resetTimer llamado');
+                if (timer) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+                isRunning = false;
+                timeLeft = 25 * 60;
+                updateDisplay();
+
+                let musica = document.getElementById("musica-pomodoro");
+                musica.pause();
+                musica.currentTime = 0;
+            }
+
+            // Event listeners
+            startBtn.addEventListener('click', startTimer);
+            pauseBtn.addEventListener('click', pauseTimer);
+            resetBtn.addEventListener('click', resetTimer);
+
+            // DEBUG helpers: imprime estado al abrir consola
+            window.__FIXTIME_DEBUG = {
+                getState: () => ({ isRunning, timeLeft, videoClassList: video.className })
+            };
+
+        })();
     </script>
 
 </body>
+
 </html>

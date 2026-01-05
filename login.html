@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/estilo-login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/estilo.css">
     <title>FixTime</title>
 </head>
-<body>
-    <nav class="menu">
-        <div class="logo-elementos">
-        <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img" />Fix<span>Time</span></a>
-        <button class="abrir" id="btnMenu">☰</button>
-        </div>
-        
-        <div class="nav-links">
-        <a href="servicios.html">Contrátanos</a>
-        <a href="login.html">Iniciar Sesión</a>
-        </div>
-    </nav>
-    <script src="scripts/menuHamburguesa.js"></script>
-    <main class="login-main">
-        <div class="wrapper">
-            <form id="formLogin">
-                <h1>Iniciar Sesión</h1>
-                <div class="input-box">
-                    <input type="email" id="email" placeholder="Correo electrónico" required>
-                    <i class='bx  bxs-user'    ></i> 
-                </div>
-                <div class="input-box">
-                    <input type="password" id="clave" placeholder="Contraseña" required>
-                    <i class='bx  bxs-lock'    ></i> 
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Recuérdame</label>
-                    <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
-                </div>
-                <p id="error" style="color: red;"></p>
 
-                <button type="submit" id="btn">Iniciar Sesión</button>
-                <div class="register-link"><p>¿No tienes una cuenta? <a href="registrarse.html">Registrarse</a></p></div>
+<body class="flex flex-col min-h-screen text-white bg-cover bg-center bg-no-repeat p-0 md:p-0 sm:p-2"
+    style="background-image: url('../iconos/pexels-vlada-karpovich-9969179.jpg');">
+
+    <div id="header"></div>
+    <main class="login-main flex-grow flex items-center justify-center p-4 pt-24 pb-10">
+        <!-- wrapper -->
+
+        <div
+            class="flex w-[420px] bg-[rgba(0,0,0,0.18)] border border-[rgba(255,255,255,0.12)] backdrop-blur-[20px] shadow-md text-white rounded-[10px] p-[30px_40px] mx-auto">
+            <form id="formLogin">
+                <h1 class="text-4xl text-center">Iniciar Sesión</h1>
+
+                <!-- input-box -->
+
+                <div class="relative w-full h-[50px] my-[30px]">
+
+                    <input type="email" id="email" placeholder="Correo electrónico"
+                        class="w-full h-full bg-transparent border-2 border-[rgba(255,255,255,0.2)] rounded-[40px] text-[16px] text-white p-[20px_45px_20px_20px] outline-none"
+                        required>
+
+                    <i class='bx  bxs-user absolute right-[20px] top-1/2 -translate-y-1/2 text-[20px]'></i>
+                </div>
+
+                <div class="relative w-full h-[50px] my-[30px]">
+                    <input type="password" id="clave" placeholder="Contraseña"
+                        class="w-full h-full bg-transparent border-2 border-[rgba(255,255,255,0.2)] rounded-[40px] text-[16px] text-white p-[20px_45px_20px_20px] outline-none"
+                        required>
+                    <i class='bx  bxs-lock absolute right-[20px] top-1/2 -translate-y-1/2 text-[20px]'></i>
+                </div>
+
+                <!-- remember-forgot -->
+
+                <div class="flex justify-between text-[14.5px] my-[-15px] mb-[15px]">
+                    <label><input type="checkbox" class="accent-white mr-[3px]">Recuérdame</label>
+                    <a href="recuperar.html" class="text-white no-underline hover:underline">¿Olvidaste tu
+                        contraseña?</a>
+                </div>
+
+                <p id="error" class="text-red-500"></p>
+
+                <button type="submit" id="btn"
+                    class="w-full h-[45px] bg-white text-[#333] font-bold rounded-[40px] shadow-[0_0_10px_rgba(0,0,0,0.1)] cursor-pointer">Iniciar
+                    Sesión</button>
+
+                <!-- register-link -->
+                <div class="register-link text-[14.5px] text-center mt-[20px] mb-[15px]">
+                    <p>¿No tienes una cuenta? <a href="registrarse.html"
+                            class="text-white font-semibold no-underline hover:underline">Registrarse</a></p>
+                </div>
 
             </form>
             <script src="scripts/login.js"></script>
         </div>
-        
-    </main>
-    
 
-    <footer>
-        <div class="contacto">
-            <h4>Reporte de errores</h4>
-            <p>Correo: <a href="mailto:CCA@gmail.com">CCA@gmail.com</a></p>
-            <p>Teléfono: 9999999999</p>
-        </div>
-        <div class="redes">
-            <p>FixTime forma parte de las aplicaciones de CCA</p>
-            <div class="iconos">
-                <img src="iconos/facebook.png" alt="Facebook">
-                <img src="iconos/reddit.png" alt="Reddit">
-                <img src="iconos/whatsapp.png" alt="WhatsApp">
-            </div>
-        </div>
-        <button class="extra">Más herramientas</button>
-    </footer>
+    </main>
+    <footer id="footer"></footer>
+
+    <script src="scripts/cargarComponentes.js"></script>
 </body>
+
 </html>

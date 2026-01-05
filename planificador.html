@@ -2,82 +2,275 @@
 <html lang="es" class="tema1">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista de Tareas</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-  <link rel="icon" href="img/favicon.png" type="image/png" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/estilo.css">
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tareas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="menu">
-        <div class="logo-elementos">
-          <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj"
-            class="reloj-img" />Fix<span>Time</span></a>
-          <button class="abrir" id="btnMenu">☰</button>
-        </div>
+    <!-- NAV -->
 
-        <div class="nav-links">
-            <a href="reloj.html" id="link-planificador">Reloj Pomodoro</a>
+    <!-- menu -->
+    <nav class="w-full py-4 px-8 bg-[#0e1a2a] flex justify-between items-center box-border">
+        <!-- logo -->
+        <a href="#" class="text-[26px] text-white no-underline font-bold">Fix<span
+                class="text-[#f4c542]">Time</span></a>
+        <!-- nav-links -->
+        <div class="flex items-center gap-[30px]">
+            <a href="reloj.html"
+                class="no-underline text-white text-base px-3 py-2 transition duration-300 hover:text-[#f4c542]">Reloj Pomodoro</a>
 
-            <div class="perfil-container" id="perfil-container">
-                <button id="perfil-btn" class="perfil-btn" aria-haspopup="true" aria-expanded="false">Perfil</button>
-                <img src="iconos/profile.jpg" alt="Perfil" class="perfil-icon" id="icono-perfil">
+            <!-- perfil-container -->
+            <div class="flex items-center gap-2 relative" id="perfil-container">
+                <!-- perfil-btn -->
 
-                <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-hidden="true">
-                  <a href="login.html" role="menuitem">Cerrar sesión</a>
+                <button id="perfil-btn" class="bg-transparent text-white border-0 text-base cursor-pointer"
+                    aria-haspopup="true" aria-expanded="false">Opciones</button>
+
+                <!-- perfil-icon -->
+                <img src="iconos/profile.jpg" alt="Perfil"
+                    class="w-9 h-9 rounded-full object-cover border-2 border-[#243a63] bg-center bg-cover bg-no-repeat"
+                    id="icono-perfil">
+
+                <!-- dropdown-menu -->
+                <div class="absolute right-0 bg-[#2c2c2c] w-[170px] rounded-[10px] shadow-[0_8px_20px_rgba(0,0,0,0.4)] z-50 hidden"
+                    style="top: calc(100% + 8px);" id="dropdown-menu" role="menu" aria-hidden="true">
+                    <a href="login.html" role="menuitem"
+                        class="block px-3 py-2 no-underline text-white hover:bg-[#243a63] hover:text-[#f4c542]">Cerrar
+                        sesión</a>
                 </div>
             </div>
         </div>
     </nav>
-    <script src="scripts/reloj.js"></script>
-    <script src="scripts/menuHamburguesa.js"></script>
-  <header>
+    
 
-    <!-- FIN MENÚ -->
-    <h1>Lista de Tareas</h1>
-    <p id="footer">Administrá tu tiempo y alcanzá todos tus objetivos!</p>
+    <div class="dashboard-container">
+        <!-- BARRA LATERAL IZQUIERDA -->
+        <aside class="sidebar">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-details">
+                    <p class="greeting">Hola,</p>
+                    <p class="username" id="username">Nombre Usuario</p>
+                </div>
+            </div>
 
-    <div class="tema">
-      <div class="circulo1 active"></div>
-      <div class="circulo2"></div>
-      <div class="circulo3"></div>
-      <div class="circulo4"></div>
+            <div class="date-display">
+                <p id="current-date">19 - Octubre - 2025</p>
+            </div>
+
+            <div class="today-section">
+                <h3>Hoy</h3>
+                <div class="day-number">
+                    <span id="today-number">20</span>
+                </div>
+            </div>
+
+            <div class="week-days">
+                <div class="week-day">
+                    <span class="day-name">LUN</span>
+                    <span class="day-number-small">20</span>
+                </div>
+                <div class="week-day">
+                    <span class="day-name">MAR</span>
+                    <span class="day-number-small">21</span>
+                </div>
+                <div class="week-day active">
+                    <span class="day-name">MIE</span>
+                    <span class="day-number-small">22</span>
+                </div>
+                <div class="week-day">
+                    <span class="day-name">JUE</span>
+                    <span class="day-number-small">23</span>
+                </div>
+                <div class="week-day">
+                    <span class="day-name">VIE</span>
+                    <span class="day-number-small">24</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <div class="categories-container">
+                <!-- CATEGORÍA TRABAJO -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <h2 class="category-title">TRABAJO</h2>
+                        <div class="category-actions">
+                            <button class="add-task-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="category-menu-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="task-list">
+                        <div class="task-item">
+                            <div class="task-info">
+                                <div class="task-header">
+                                    <h3 class="task-title">Realizar inventario</h3>
+                                    <div class="task-timer">
+                                        <i class="far fa-clock"></i>
+                                        <span>130 min</span>
+                                    </div>
+                                </div>
+                                <div class="task-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%"></div>
+                                    </div>
+                                    <span class="progress-text">1/130 min</span>
+                                </div>
+                            </div>
+                            <div class="task-actions">
+                                <button class="task-check">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="task-item">
+                            <div class="task-info">
+                                <div class="task-header">
+                                    <h3 class="task-title">Realizar proyecto</h3>
+                                    <div class="task-timer">
+                                        <i class="far fa-clock"></i>
+                                        <span>40 min</span>
+                                    </div>
+                                </div>
+                                <div class="task-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span class="progress-text">0/40 min</span>
+                                </div>
+                            </div>
+                            <div class="task-actions">
+                                <button class="task-check">
+                                    <i class="far fa-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA EDUCACIÓN -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <h2 class="category-title">EDUCACIÓN</h2>
+                        <div class="category-actions">
+                            <button class="add-task-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <button class="category-menu-btn">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="task-list">
+                        <div class="task-item">
+                            <div class="task-info">
+                                <div class="task-header">
+                                    <h3 class="task-title">Realizar proyecto</h3>
+                                    <div class="task-timer">
+                                        <i class="far fa-clock"></i>
+                                        <span>40 min</span>
+                                    </div>
+                                </div>
+                                <div class="task-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                    <span class="progress-text">0/40 min</span>
+                                </div>
+                            </div>
+                            <div class="task-actions">
+                                <button class="task-check">
+                                    <i class="far fa-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-  </header>
-  <form class="addtodo">
 
-    <div class="todo-container2">
-
-      <input id="tarea" type="text" class="todo-input" placeholder="Ingrese una nueva tarea" required />
-      <button class="todo-button" type="submit">
-        <i class="fas fa-plus"></i>
-      </button>
+    <!-- MODAL PARA AÑADIR TAREA -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Añadir nueva tarea</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="taskTitle">Título de la tarea</label>
+                        <input type="text" id="taskTitle" placeholder="Escribe el título..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskCategory">Categoría</label>
+                        <select id="taskCategory" required>
+                            <option value="">Selecciona una categoría</option>
+                            <option value="work">Trabajo</option>
+                            <option value="education">Educación</option>
+                            <option value="personal">Personal</option>
+                            <option value="health">Salud</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskTime">Tiempo estimado (minutos)</label>
+                        <input type="number" id="taskTime" min="5" max="480" placeholder="30" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Añadir tarea</button>
+                </form>
+            </div>
+        </div>
     </div>
+    <script src="scripts/app.js"></script>
+    <!-- SCRIPT: temporizador + control video + menú perfil -->
+    <script>
+        (function () {
+            /********** MENU PERFIL **********/
+            const perfilBtn = document.getElementById('perfil-btn');
+            const iconoPerfil = document.getElementById('icono-perfil');
+            const dropdown = document.getElementById('dropdown-menu');
+            const perfilContainer = document.getElementById('perfil-container');
+
+            function toggleMenu() {
+                const isOpen = dropdown.style.display === 'block';
+                dropdown.style.display = isOpen ? 'none' : 'block';
+                perfilBtn.setAttribute('aria-expanded', String(!isOpen));
+                dropdown.setAttribute('aria-hidden', String(isOpen));
+            }
+            perfilBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
+            iconoPerfil && iconoPerfil.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
+
+            // Cerrar si se hace click fuera
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.perfil-container')) {
+                    dropdown.style.display = 'none';
+                    perfilBtn.setAttribute('aria-expanded', 'false');
+                    dropdown.setAttribute('aria-hidden', 'true');
+                }
+            });
 
 
-    <div class="select todo-container3">
-      <select name="todos" class="filter-todo">
-        <option value="all">Todas</option>
-        <option value="completed">Completadas</option>
-        <option value="uncompleted">Sin completar</option>
-      </select>
-    </div>
-  </form>
-  <div class="todo-container">
-    <ul class="todo-list"></ul>
-  </div>
-
-
-  <script src="scripts/app.js"></script>
-
-  
+        })();
+    </script>
 </body>
 
 </html>
