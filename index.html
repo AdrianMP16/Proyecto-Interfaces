@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/estilo.css" />
   <link rel="stylesheet" href="css/slider.css" />
   <link rel="stylesheet" media="all" href="css/fondo.css" />
@@ -13,63 +14,60 @@
 </head>
 
 <body>
-  <nav class="menu">
-    <div class="logo-elementos">
-      <a class="logo" href="index.html"><img src="../iconos/reloj.png" alt="Icono reloj" class="reloj-img" />Fix<span>Time</span></a>
-      <button class="abrir" id="btnMenu">☰</button>
-    </div>
-    
-    <div class="nav-links">
-      <a href="servicios.html">Contrátanos</a>
-      <a href="login.html">Iniciar Sesión</a>
-    </div>
-  </nav>
-  <script src="scripts/menuHamburguesa.js"></script>
 
+  <!--menu -->
+  <div id="header"></div>
 
-  <div class="cuerpo">
-    <header>
-      <div class="box-conteiner">
-        <h1>Organiza tu tiempo</h1>
-        <h2>Gestiona tu propio organizador en linea.</h2>
+  <!-- cuerpo -->
+  <div class="bg-[#223C6E] font-sans">
+    <header class="relative flex justify-center items-center mt-4 mx-4 md:mt-0 md:mx-[20px] h-[500px] md:h-[600px]">
+      <!-- box-conteiner  -->
+
+      <div class="bg-[rgba(255,255,255,0.9)] rounded-[20px] border-[4px] border-[rgba(255,255,255,0.2)] 
+              text-center py-[40px] px-[20px] md:py-[50px] md:px-[70px] 
+              z-[50] w-full max-w-[350px] md:max-w-[700px] shadow-2xl">
+
+        <h1 class="text-[35px] md:text-[60px] font-bold leading-tight mb-4 text-[#0e1a2a]">
+          Organiza tu tiempo
+        </h1>
+
+        <h2 class="text-[18px] md:text-[30px] font-medium text-[#223C6E] leading-relaxed">
+          Gestiona tu propio organizador en línea.
+        </h2>
       </div>
 
-      <div class="area">
-        <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
+      <!-- area  -->
+
+      <div id="area"></div>
     </header>
   </div>
 
-  <div class="cards-container">
+  <!--cards-container-->
+
+  <div class="relative text-center cards-container">
 
     <!--Tarjeta 1-->
 
     <div class="owl-carousel owl-carousel1 owl-theme">
-      <div class="card text-center" onclick="toggleCard(this)">
+      <!-- card text-center -->
+      <div
+        class="bg-white shadow-[0_8px_30px_-7px_#c9dff0] mx-2 md:mx-[20px] px-2 md:px-[10px] rounded-[20px] border-0 text-center card"
+        onclick="toggleCard(this)">
         <h5>El reloj</h5>
         <br />
-        <img src="iconos/focus.png" alt="Mantente enfocado" class="card_img" />
-        <div class="card_txt">
+        <!-- card_img -->
+        <img src="iconos/focus.png" alt="Mantente enfocado" class="block max-w-[300px] mx-auto card_img" />
+        <!-- card_txt -->
+        <div class="card_txt hidden">
           <br />
-          <p>
+          <p class="text-[14px] text-[#555] pb-[15px]">
             En base a las actividades “El Reloj” calcula el tiempo
             aproximado para realizarlas
           </p>
           <br />
           <ul>
-            <li>✔ Activa descansos recurrentes</li>
-            <li>✔ Boton de inicio</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Activa descansos recurrentes</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Boton de inicio</li>
             <br>
           </ul>
         </div>
@@ -77,47 +75,61 @@
 
       <!--Tarjeta 2-->
 
-      <div class="card text-center" onclick="toggleCard(this)">
+      <!-- card text-center -->
+
+      <div
+        class="bg-white shadow-[0_8px_30px_-7px_#c9dff0] mx-2 md:mx-[20px] px-2 md:px-[10px] rounded-[20px] border-0 text-center card"
+        onclick="toggleCard(this)">
         <h5>Planificador de Tareas</h5>
         <br />
-        <img class="card_img" src="iconos/planificador.png" alt="Captura del planificador de tareas de FixTime" />
-        <div class="card_txt">
+        <!-- card_img -->
+        <img class="block max-w-[300px] mx-auto card_img" src="iconos/planificador.png"
+          alt="Captura del planificador de tareas de FixTime" />
+        <!-- card_txt -->
+        <div class="card_txt hidden">
           <br>
-          <p>Organiza tu día de forma práctica y productiva:</p>
+          <p class="text-[14px] text-[#555] pb-[15px]">Organiza tu día de forma práctica y productiva:</p>
           <ul>
-            <li>✔ Crea tareas</li>
-            <li>✔ Controla tu progreso</li>
-            <li>✔ Gestiona tu tiempo con el temporizador</li>
-            <li>✔ Intervalos integrados</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Crea tareas</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Controla tu progreso</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Gestiona tu tiempo con el temporizador
+            </li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Intervalos integrados</li>
             <br>
           </ul>
         </div>
       </div>
 
       <!--Tarjeta 3-->
-      <div class="card text-center">
+      <!-- card text-center -->
+      <div
+        class="bg-white shadow-[0_8px_30px_-7px_#c9dff0] mx-2 md:mx-[20px] px-2 md:px-[10px] rounded-[20px] border-0 text-center card">
         <h5>Concentrate Mejor</h5>
-        <div class="card_txt" style="display: block;">
+        <!-- card_txt -->
+        <div class="card_txt block">
           <br>
-          <p>Evita las interrupciones mientras nos utilizas.</p>
+          <p class="text-[14px] text-[#555] pb-[15px]">Evita las interrupciones mientras nos utilizas.</p>
           <ul>
-            <li>✔ Cero distracciones</li>
-            <li>✔ Musica relajante</li>
-            <li>✔ Completamente intuitivo</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Cero distracciones</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Musica relajante</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Completamente intuitivo</li>
             <br>
           </ul>
         </div>
       </div>
 
-      <div class="card text-center">
+      <!-- card text-center -->
+      <div
+        class="bg-white shadow-[0_8px_30px_-7px_#c9dff0] mx-2 md:mx-[20px] px-2 md:px-[10px] rounded-[20px] border-0 text-center card">
         <h5>Precios Accesibles<br /></h5>
-        <div class="card_txt" style="display: block;">
+        <!-- card_txt -->
+        <div class="card_txt block">
           <br>
-          <p>Trabaja completamente gratis o con nuestros servicios extra.</p>
+          <p class="text-[14px] text-[#555] pb-[15px]">Trabaja completamente gratis o con nuestros servicios extra.</p>
           <ul>
-            <li>✔ Precios accesibles.</li>
-            <li>✔ Sin publicidad.</li>
-            <li>✔ Completamente seguro.</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Precios accesibles.</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Sin publicidad.</li>
+            <li class="list-none mb-[10px] relative pl-[25px] leading-[1.5]">✔ Completamente seguro.</li>
             <br>
           </ul>
         </div>
@@ -128,22 +140,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-  <footer>
-    <div class="contacto">
-      <h4>Reporte de errores</h4>
-      <p>Correo: <a href="mailto:CCA@gmail.com">CCA@gmail.com</a></p>
-      <p>Teléfono: 9999999999</p>
-    </div>
-    <div class="redes">
-      <p>FixTime forma parte de las aplicaciones de CCA</p>
-      <div class="iconos">
-        <img src="iconos/facebook.png" alt="Facebook" />
-        <img src="iconos/reddit.png" alt="Reddit" />
-        <img src="iconos/whatsapp.png" alt="WhatsApp" />
-      </div>
-    </div>
-    <button class="extra">Más herramientas</button>
-  </footer>
+  <footer id="footer"></footer>
+
+  <script src="scripts/cargarComponentes.js"></script>
+  <script src="scripts/cargarFondo.js"></script>
 </body>
 
 </html>

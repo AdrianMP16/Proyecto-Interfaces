@@ -369,3 +369,71 @@ footer {
     background-color: #f4c542;
     color: #000;
 }
+
+/* 1. Limpiar el botón hamburguesa */
+.abrir {
+    display: none; /* Oculto en escritorio */
+    background: transparent !important; /* Quita el azul de fondo */
+    color: white !important;
+    min-width: auto !important; /* Quita los 120px de ancho */
+    width: auto !important;
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    box-shadow: none; /* Quita sombras si las hubiera */
+}
+
+/* 2. Alinear logo y botón en la misma línea */
+.logo-elementos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Obliga a que se repartan los extremos */
+}
+
+/* 3. Corregir el despliegue del menú móvil */
+@media screen and (max-width: 550px) {
+    .abrir {
+        display: block; /* Muestra el icono en móvil */
+    }
+
+    .nav-links {
+        display: none; /* Oculto por defecto */
+    }
+
+    /* Clase que activa tu JavaScript */
+    .nav-links.activo {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Aparece justo debajo de la barra oscura */
+        left: 0;
+        width: 100%;
+        background-color: #0e1a2a; /* Color uniforme con el nav */
+        padding: 20px;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+    
+    .nav-links.activo a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
